@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+<!-- Content -->
+{% block content %}
+
+<!--
+Hack: check whether the content contains a h1 headline. If it
+doesn't, the page title (or respectively site name) is used
+as the main headline.
+-->
+{% if not "\x3ch1" in page.content %}
+    <h1>{{ page.title | d(config.site_name, true)}}</h1>
+{% endif %}
+
+<!-- Markdown content -->
+
+    {% if page and page.meta and page.meta.author_gh_user %}
+
+        <aside class="mdx-author">
+            <p>
+                <img src="https://avatars.githubusercontent.com/{{ page.meta.author_gh_user }}" alt="@{{ page.meta.author_gh_user }}">
+            </p>
+            <p>
+                <span>
+                    <b>{{ page.meta.author }}</b> · <a href="https://github.com/{{ page.meta.author_gh_user }}">@{{ page.meta.author_gh_user }}</a>
+                </span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                    </svg> {{ page.meta.read_time }} read
+                </span>
+            </p>
+        </aside>
+
+    {% endif %}
+
+    {% if page and page.meta and page.meta.tags %}
+        <div class="tags">
+        {% for tag in page.meta.tags %}
+            <a href="/tags/#{{ tag }}" class="tag"><code>#{{ tag }}</code></a>
+        {% endfor %}
+        </div>
+    {% endif %}
+
+    {{ page.content }}
+
+    <!-- Last update of source file -->
+    {% if page and page.meta %}
+        {% if page.meta.git_revision_date_localized or page.meta.revision_date %}
+            {% include "partials/source-file.html" %}
+        {% endif %}
+    {% endif %}
+
+    {% if page and page.meta and not page.meta.hide %}
+
+        <!-- Giscus -->
+        <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
+        <script src="https://giscus.app/client.js"
+                data-repo="zhanbao2000/blog"
+                data-repo-id="R_kgDOHIZK7A"
+                data-category="Announcements"
+                data-category-id="DIC_kwDOHIZK7M4COdSe"
+                data-mapping="pathname"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="light"
+                data-lang="zh-CN"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async>
+        </script>
+
+        <!-- Reload on palette change -->
+        <script>
+            var palette = __md_get("__palette");
+            if (palette && typeof palette.color === "object")
+                if (palette.color.scheme === "slate") {
+                    const giscus = document.querySelector("script[src*=giscus]");
+                    giscus.setAttribute("data-theme", "transparent_dark")
+                }
+
+            /* Register event handlers after documented loaded */
+            document.addEventListener("DOMContentLoaded", function() {
+                const ref = document.querySelector("[data-md-component=palette]");
+                ref.addEventListener("change", function() {
+                    const palette = __md_get("__palette");
+                    if (palette && typeof palette.color === "object") {
+                        const theme = palette.color.scheme === "slate" ? "transparent_dark" : "light";
+
+                        /* Instruct Giscus to change theme */
+                        const frame = document.querySelector(".giscus-frame");
+                        frame.contentWindow.postMessage(
+                            { giscus: { setConfig: { theme } } },
+                            "https://giscus.app"
+                        )
+                    }
+                })
+            })
+        </script>
+
+    {% endif %}
+
+{% endblock %}
