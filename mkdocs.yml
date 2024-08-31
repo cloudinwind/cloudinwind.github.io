@@ -1,0 +1,5 @@
+site_name: 小风的代码世界
+site_url: https://www.cloudinwind.github.io
+site_author: 小风
+theme:
+  name: material #主题
