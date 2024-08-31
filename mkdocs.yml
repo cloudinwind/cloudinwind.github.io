@@ -10,9 +10,16 @@ edit_uri: blob/main/docs/
 
 theme:
   name: material
+  language: zh
   custom_dir: custom_themes/overrides
   logo: https://pic.imgdb.cn/item/66d2d740d9c307b7e91a82b4.jpg
   favicon: https://pic.imgdb.cn/item/66d2d740d9c307b7e91a82b4.jpg
+
+  font:
+    text: Roboto Slab
+    code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github
   # 设置日间模式和夜间模式的切换
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -21,16 +28,17 @@ theme:
       accent: indigo # 链接等可交互元件的高亮色
       # teal 
       toggle:
-        icon: material/toggle-switch # 图标
-        name: 切换至夜间模式 # 鼠标悬浮提示
+        icon: material/weather-sunny
+        name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate # 夜间模式
       primary: black 
       accent: indigo
       # teal
       toggle:
-        icon: material/toggle-switch-off-outline
-        name: 切换至日间模式
+        icon: material/weather-night
+        name: Switch to light mode
+  
   
   features:
     - announce.dismiss #呈现可标记为由用户读取的临时公告，可以包含一个用于取消当前公告的按钮
@@ -53,8 +61,6 @@ theme:
     - content.action.edit
     - content.action.view
     - content.code.annotate 
-  icon:
-    repo: fontawesome/brands/github
 
 extra:
   social:
