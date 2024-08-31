@@ -11,8 +11,8 @@ edit_uri: blob/main/docs/
 theme:
   name: material
   custom_dir: custom_themes/overrides
-  logo: custom_themes/img/icon.jpg
-  favicon: custom_themes/img/icon.jpg
+  logo: https://pic.imgdb.cn/item/66d2d740d9c307b7e91a82b4.jpg
+  favicon: https://pic.imgdb.cn/item/66d2d740d9c307b7e91a82b4.jpg
   # 设置日间模式和夜间模式的切换
   palette:
     - media: "(prefers-color-scheme: light)"
