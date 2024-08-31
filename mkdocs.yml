@@ -64,19 +64,6 @@ extra:
     - icon: fontawesome/brands/x-twitter 
       link: https://twitter.com
 
-plugins:
-  - search
-      lang: zh
-  - git-revision-date-localized:
-      type: iso_date
-      enable_creation_date: false
-      # exclude:
-      #   - index.md 
-      #   - waline.md
-  - tags:
-      tags_file: tag.md  #分类标签
-
-
 
 plugins:
   - search:
