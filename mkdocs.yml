@@ -77,75 +77,30 @@ plugins:
       tags_file: tag.md  #分类标签
 
 
+
+plugins:
+  - search:
+      lang: zh
+
 # LaTeX支持
 markdown_extensions:
-  - abbr
-  - attr_list
+  - pymdownx.arithmatex:
+      generic: true
   - admonition
-  - def_list
-  - footnotes
-  - md_in_html
-  - meta # 支持Markdown文件上方自定义标题标签等
-  - pymdownx.caret
-  - pymdownx.betterem
-  - pymdownx.critic
   - pymdownx.details
-  - pymdownx.inlinehilite
+  - pymdownx.tilde
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
   - pymdownx.keys
   - pymdownx.mark
-  - pymdownx.snippets
-  - pymdownx.smartsymbols
-  - pymdownx.tilde
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format # 代码块高亮插件
-  - pymdownx.arithmatex:  # latex支持
-      generic: true
-  - toc:
-      permalink: true # 固定标题位置为当前位置
-  - pymdownx.highlight: # 代码块高亮
-      anchor_linenums: true
-      linenums: true # 显示行号
-      # auto_title: true # 显示编程语言名称
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.tabbed:
-      alternate_style: true
+  - pymdownx.highlight:
+      use_pygments: true
+  - footnotes
+  - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
-  - markdown.extensions.toc:
-      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
-      permalink: "\ue157"
-
-extra_javascript:
-  - javascripts/extra.js 
-  # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js  # extra的cdn
-  - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  # - javascripts/mathjax-config.js
-  # - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML
-
-  - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js
-  - ckplayer/js/ckplayer.js
-  # - https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js
-  # - javascripts/backbound1.js
-  # - javascripts/rellax.min.js
-  - https://cdn.jsdelivr.net/npm/mermaid@10.0.2/dist/add-html-label-6e56ed67.min.js
-  # - https://res.zvo.cn/translate/translate.js  # Translate
-
-extra_css:
-  - stylesheets/extra.css
-  - stylesheets/link.css
-  # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/extra.css # extra.css的CDN
-  # - stylesheets/extra1.css
-  # - stylesheets/video.css
-  # - https://unpkg.com/@waline/client@v2/dist/waline.css
-  - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.css #评论
-  - ckplayer/css/ckplayer.css
-  - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css
-  # - https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css
-  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css  #字体
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
