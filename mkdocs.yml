@@ -77,6 +77,8 @@ extra:
 plugins:
   - search:
       lang: zh
+  - tags:
+      tags_file: tags.md  #指定应使用哪个文件来呈现标签索引
 
 # LaTeX支持
 markdown_extensions:
