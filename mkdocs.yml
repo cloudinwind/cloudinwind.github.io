@@ -10,11 +10,14 @@ edit_uri: blob/main/docs/
 
 theme:
   name: material
+  custom_dir: custom_themes/overrides
+  logo: custom_themes/img/icon.jpg
+  favicon: custom_themes/img/icon.jpg
   # 设置日间模式和夜间模式的切换
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default # 日间模式
-      primary: blue # 上方的
+      primary: default # 上方的
       accent: indigo # 链接等可交互元件的高亮色
       # teal 
       toggle:
