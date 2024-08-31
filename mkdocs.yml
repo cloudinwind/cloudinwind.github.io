@@ -11,7 +11,7 @@ edit_uri: blob/main/docs/
 theme:
   name: material
   language: zh
-  custom_dir: custom_themes/overrides
+  custom_dir: overrides
   logo: https://pic.imgdb.cn/item/66d2d740d9c307b7e91a82b4.jpg
   favicon: https://pic.imgdb.cn/item/66d2d740d9c307b7e91a82b4.jpg
 
@@ -81,24 +81,84 @@ plugins:
       tags_file: tags.md  #指定应使用哪个文件来呈现标签索引
 
 # LaTeX支持
+# markdown_extensions:
+#   - pymdownx.arithmatex:
+#       generic: true
+#   - admonition
+#   - pymdownx.details
+#   - pymdownx.tilde
+#   - pymdownx.superfences
+#   - pymdownx.critic
+#   - pymdownx.caret
+#   - pymdownx.keys
+#   - pymdownx.mark
+#   - pymdownx.highlight:
+#       use_pygments: true
+#   - footnotes
+#   - def_list
+#   - pymdownx.tasklist:
+#       custom_checkbox: true
+#   - pymdownx.tabbed:
+#       alternate_style: true
+#   - attr_list
+#   - md_in_html
+
 markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
+  - abbr
+  - attr_list
   - admonition
-  - pymdownx.details
-  - pymdownx.tilde
-  - pymdownx.superfences
-  - pymdownx.critic
+  - def_list
+  - footnotes
+  - callouts
+  - md_in_html
+  - markdown.extensions.abbr # 支持Markdown文件上方自定义标题标签等
+  - pymdownx.magiclink
   - pymdownx.caret
+  - pymdownx.betterem
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.mark
-  - pymdownx.highlight:
-      use_pygments: true
-  - footnotes
-  - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format 
+  - pymdownx.arithmatex:  # latex支持
+      generic: true
+  - toc:
+      permalink: true # 固定标题位置为当前位置
+  - pymdownx.highlight: # 代码块高亮
+      anchor_linenums: true
+      linenums: true # 显示行号
+      # auto_title: true # 显示编程语言名称
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true
-  - attr_list
-  - md_in_html
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+
+
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js  # extra的cdn
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  
+
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/extra2.css  #诗词版、打赏
+  - stylesheets/link.css  #友链
+  - stylesheets/customize.css  #按钮圆角化
+  - stylesheets/bannerSlider.css
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css  #字体 
