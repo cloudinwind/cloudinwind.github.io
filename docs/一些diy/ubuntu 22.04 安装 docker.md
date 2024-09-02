@@ -1,5 +1,5 @@
 ---
-title: 服务器安装redis
+title: ubuntu 22.04 安装 docker
 tags:
   - 服务器
   - 环境部署
