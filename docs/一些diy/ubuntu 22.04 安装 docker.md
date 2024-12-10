@@ -7,7 +7,14 @@ tags:
 
 ## 参考
 
-[Ubuntu22.04安装docker和docker-compose-CSDN博客](https://blog.csdn.net/guo_zhen_qian/article/details/132254406)
+
+```cardlink
+url: https://blog.csdn.net/guo_zhen_qian/article/details/132254406
+title: "Ubuntu22.04安装docker和docker-compose-CSDN博客"
+description: "文章浏览阅读9.7k次，点赞8次，收藏26次。ubuntu22.0.4系统安装docker，并修改默认镜像下载目录_ubuntu22.04安装docker"
+host: blog.csdn.net
+```
+
 
 [容器与云|如何在 Ubuntu 22.04 LTS 中安装 Docker 和 Docker Compose](https://linux.cn/article-14871-1.html)
 
