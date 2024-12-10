@@ -1,0 +1,619 @@
+{
+  "model": {
+    "columns": [
+      {
+        "id": "36029628-f9bf-4ad7-9c48-65807922b6f6",
+        "sortDir": "default",
+        "isVisible": true,
+        "width": "140px",
+        "type": "text",
+        "numberPrefix": "",
+        "numberSuffix": "",
+        "numberSeparator": "",
+        "content": "公司",
+        "numberFormat": "number",
+        "currencyType": "USD",
+        "dateFormat": "mmddyyyy",
+        "dateFormatSeparator": "-",
+        "hour12": true,
+        "includeTime": false,
+        "shouldWrapOverflow": true,
+        "tags": [],
+        "calculationType": "none",
+        "aspectRatio": "unset",
+        "horizontalPadding": "unset",
+        "verticalPadding": "unset",
+        "frontmatterKey": null,
+        "multiTagSortDir": "default"
+      },
+      {
+        "id": "1380c7bd-dee8-4fb9-8564-fc30809c868d",
+        "sortDir": "default",
+        "isVisible": true,
+        "width": "140px",
+        "type": "tag",
+        "numberPrefix": "",
+        "numberSuffix": "",
+        "numberSeparator": "",
+        "content": "类型",
+        "numberFormat": "number",
+        "currencyType": "USD",
+        "dateFormat": "mmddyyyy",
+        "dateFormatSeparator": "-",
+        "hour12": true,
+        "includeTime": false,
+        "shouldWrapOverflow": true,
+        "tags": [
+          {
+            "id": "b7952244-bba3-45b1-bc7d-e2f684b5dd48",
+            "content": "国企",
+            "color": "blue"
+          },
+          {
+            "id": "20c93101-89c0-4663-a295-de335844113f",
+            "content": "互联网中大厂",
+            "color": "orange"
+          },
+          {
+            "id": "9141546d-80ce-412b-950d-b41c9276aac2",
+            "content": "中大厂",
+            "color": "gray"
+          },
+          {
+            "id": "1d69c12a-dceb-48f0-9ab5-9e885d258d99",
+            "content": "大厂",
+            "color": "gray"
+          }
+        ],
+        "calculationType": "count-all",
+        "aspectRatio": "unset",
+        "horizontalPadding": "unset",
+        "verticalPadding": "unset",
+        "frontmatterKey": null,
+        "multiTagSortDir": "default"
+      },
+      {
+        "id": "8aac164c-f81e-4e3c-a701-1508ced64a12",
+        "sortDir": "default",
+        "isVisible": true,
+        "width": "140px",
+        "type": "text",
+        "numberPrefix": "",
+        "numberSuffix": "",
+        "numberSeparator": "",
+        "content": "部门",
+        "numberFormat": "number",
+        "currencyType": "USD",
+        "dateFormat": "mmddyyyy",
+        "dateFormatSeparator": "-",
+        "hour12": true,
+        "includeTime": false,
+        "shouldWrapOverflow": true,
+        "tags": [],
+        "calculationType": "none",
+        "aspectRatio": "unset",
+        "horizontalPadding": "unset",
+        "verticalPadding": "unset",
+        "frontmatterKey": null,
+        "multiTagSortDir": "default"
+      },
+      {
+        "id": "7ad1ccd0-30a7-4d2b-b298-91d9dab1d201",
+        "sortDir": "default",
+        "isVisible": true,
+        "width": "140px",
+        "type": "tag",
+        "numberPrefix": "",
+        "numberSuffix": "",
+        "numberSeparator": "",
+        "content": "投递",
+        "numberFormat": "number",
+        "currencyType": "USD",
+        "dateFormat": "mmddyyyy",
+        "dateFormatSeparator": "-",
+        "hour12": true,
+        "includeTime": false,
+        "shouldWrapOverflow": true,
+        "tags": [
+          {
+            "id": "0d83899c-fe61-472b-8e58-9f849948ce95",
+            "content": "是",
+            "color": "red"
+          }
+        ],
+        "calculationType": "none",
+        "aspectRatio": "unset",
+        "horizontalPadding": "unset",
+        "verticalPadding": "unset",
+        "frontmatterKey": null,
+        "multiTagSortDir": "default"
+      },
+      {
+        "id": "22c8d16b-5d86-4611-866f-542b0c03f32b",
+        "sortDir": "default",
+        "isVisible": true,
+        "width": "140px",
+        "type": "tag",
+        "numberPrefix": "",
+        "numberSuffix": "",
+        "numberSeparator": "",
+        "content": "状态",
+        "numberFormat": "number",
+        "currencyType": "USD",
+        "dateFormat": "mmddyyyy",
+        "dateFormatSeparator": "-",
+        "hour12": true,
+        "includeTime": false,
+        "shouldWrapOverflow": true,
+        "tags": [
+          {
+            "id": "81e98720-34fb-4d14-aeb6-1ecb98c0afbc",
+            "content": "已人才测评",
+            "color": "brown"
+          },
+          {
+            "id": "02a1bd1e-a893-4a40-847b-93981e024c98",
+            "content": "已笔试",
+            "color": "orange"
+          }
+        ],
+        "calculationType": "none",
+        "aspectRatio": "unset",
+        "horizontalPadding": "unset",
+        "verticalPadding": "unset",
+        "frontmatterKey": null,
+        "multiTagSortDir": "default"
+      },
+      {
+        "id": "2b3aec57-dbd7-4984-afa7-d5b851359f47",
+        "sortDir": "default",
+        "isVisible": true,
+        "width": "140px",
+        "type": "text",
+        "numberPrefix": "",
+        "numberSuffix": "",
+        "numberSeparator": "",
+        "content": "总结",
+        "numberFormat": "number",
+        "currencyType": "USD",
+        "dateFormat": "mmddyyyy",
+        "dateFormatSeparator": "-",
+        "hour12": true,
+        "includeTime": false,
+        "shouldWrapOverflow": true,
+        "tags": [],
+        "calculationType": "none",
+        "aspectRatio": "unset",
+        "horizontalPadding": "unset",
+        "verticalPadding": "unset",
+        "frontmatterKey": null,
+        "multiTagSortDir": "default"
+      }
+    ],
+    "rows": [
+      {
+        "id": "fd75bbd0-3900-4767-b49a-e45658f27fed",
+        "index": 0,
+        "sourceId": null,
+        "creationDateTime": "2024-09-02T13:12:10.336Z",
+        "lastEditedDateTime": "2024-09-02T13:12:10.336Z",
+        "cells": [
+          {
+            "id": "d5a03d8c-f723-49dc-9fd3-ee74329190a4",
+            "columnId": "36029628-f9bf-4ad7-9c48-65807922b6f6",
+            "content": "",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "e7dc6b70-57e4-403f-8581-42be81140cfc",
+            "columnId": "1380c7bd-dee8-4fb9-8564-fc30809c868d",
+            "tagId": null,
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "8adcf1da-b8c0-4107-ad07-aa3a5a4799b4",
+            "columnId": "8aac164c-f81e-4e3c-a701-1508ced64a12",
+            "content": "",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "489c780f-62bd-4451-9109-966039f868ac",
+            "columnId": "7ad1ccd0-30a7-4d2b-b298-91d9dab1d201",
+            "tagId": null,
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "3fc322c3-a406-4dd9-a556-505d3a28692e",
+            "columnId": "22c8d16b-5d86-4611-866f-542b0c03f32b",
+            "tagId": null,
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "246b792c-211a-4063-bfac-43c54f4619a4",
+            "columnId": "2b3aec57-dbd7-4984-afa7-d5b851359f47",
+            "content": "",
+            "hasValidFrontmatter": null
+          }
+        ]
+      },
+      {
+        "id": "de602e1a-c990-4f88-b4d5-cfef53dd3155",
+        "index": 1,
+        "sourceId": null,
+        "creationDateTime": "2024-09-02T13:15:09.158Z",
+        "lastEditedDateTime": "2024-09-02T13:45:44.347Z",
+        "cells": [
+          {
+            "id": "d585234f-849f-4c08-950c-cfc57952c1f7",
+            "columnId": "36029628-f9bf-4ad7-9c48-65807922b6f6",
+            "content": "深信服",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "e1e81e59-6563-4b9d-95ce-c270f53f1ec7",
+            "columnId": "1380c7bd-dee8-4fb9-8564-fc30809c868d",
+            "tagId": "20c93101-89c0-4663-a295-de335844113f",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "1df08359-ecea-472f-8285-0a42e2813986",
+            "columnId": "8aac164c-f81e-4e3c-a701-1508ced64a12",
+            "content": "Java",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "edd419cf-de7f-4815-a42b-f9af96c029b3",
+            "columnId": "7ad1ccd0-30a7-4d2b-b298-91d9dab1d201",
+            "tagId": "0d83899c-fe61-472b-8e58-9f849948ce95",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "95886074-cd61-4236-8976-493e7773e4f8",
+            "columnId": "22c8d16b-5d86-4611-866f-542b0c03f32b",
+            "tagId": null,
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "efdd4976-8752-4fa0-88f0-e9118df5c814",
+            "columnId": "2b3aec57-dbd7-4984-afa7-d5b851359f47",
+            "content": "",
+            "hasValidFrontmatter": null
+          }
+        ]
+      },
+      {
+        "id": "e2fcb768-dc4c-4e9d-b589-7df5124f7307",
+        "index": 2,
+        "sourceId": null,
+        "creationDateTime": "2024-09-02T13:15:11.325Z",
+        "lastEditedDateTime": "2024-09-02T13:44:54.322Z",
+        "cells": [
+          {
+            "id": "3424fdb0-14de-4c17-bba6-0f8cfd2238d8",
+            "columnId": "36029628-f9bf-4ad7-9c48-65807922b6f6",
+            "content": "中国网安",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "473e7a00-4f60-4fe7-8f3a-f8c8e73b9340",
+            "columnId": "1380c7bd-dee8-4fb9-8564-fc30809c868d",
+            "tagId": "b7952244-bba3-45b1-bc7d-e2f684b5dd48",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "0fc51c52-e22b-4bdb-b74f-baf0a26ecbc5",
+            "columnId": "8aac164c-f81e-4e3c-a701-1508ced64a12",
+            "content": "Java",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "62706aa5-8062-4d25-be9c-2e873d03b42b",
+            "columnId": "7ad1ccd0-30a7-4d2b-b298-91d9dab1d201",
+            "tagId": "0d83899c-fe61-472b-8e58-9f849948ce95",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "8dd1386a-c205-47cb-8cab-ab197002fb3c",
+            "columnId": "22c8d16b-5d86-4611-866f-542b0c03f32b",
+            "tagId": "81e98720-34fb-4d14-aeb6-1ecb98c0afbc",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "888cca06-7707-4539-adbd-6c9f73a05718",
+            "columnId": "2b3aec57-dbd7-4984-afa7-d5b851359f47",
+            "content": "",
+            "hasValidFrontmatter": null
+          }
+        ]
+      },
+      {
+        "id": "a06851d1-59cb-4108-aeff-abab1e89b275",
+        "index": 3,
+        "sourceId": null,
+        "creationDateTime": "2024-09-02T13:15:12.370Z",
+        "lastEditedDateTime": "2024-09-02T13:46:44.303Z",
+        "cells": [
+          {
+            "id": "fb3c8b0c-ab90-458c-a382-c891ae5aad1d",
+            "columnId": "36029628-f9bf-4ad7-9c48-65807922b6f6",
+            "content": "海光",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "eebddcb6-29b7-46cc-8199-f75b365b6cd0",
+            "columnId": "1380c7bd-dee8-4fb9-8564-fc30809c868d",
+            "tagId": "9141546d-80ce-412b-950d-b41c9276aac2",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "bb980954-01f8-4693-90e7-52a914090c87",
+            "columnId": "8aac164c-f81e-4e3c-a701-1508ced64a12",
+            "content": "Java",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "994865de-f234-4483-b886-67b23bf1e60b",
+            "columnId": "7ad1ccd0-30a7-4d2b-b298-91d9dab1d201",
+            "tagId": "0d83899c-fe61-472b-8e58-9f849948ce95",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "9a54ac8a-05ed-40d4-9bb8-bb66f43115ab",
+            "columnId": "22c8d16b-5d86-4611-866f-542b0c03f32b",
+            "tagId": "02a1bd1e-a893-4a40-847b-93981e024c98",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "8f9b5ff8-31bd-48f5-a828-9fa654462075",
+            "columnId": "2b3aec57-dbd7-4984-afa7-d5b851359f47",
+            "content": "",
+            "hasValidFrontmatter": null
+          }
+        ]
+      },
+      {
+        "id": "763e42a6-6f6d-4754-800d-4050e37b1b6d",
+        "index": 4,
+        "sourceId": null,
+        "creationDateTime": "2024-09-02T13:15:13.433Z",
+        "lastEditedDateTime": "2024-09-02T13:49:48.572Z",
+        "cells": [
+          {
+            "id": "1d7664af-3ebd-42c0-a74f-65759c8d65a8",
+            "columnId": "36029628-f9bf-4ad7-9c48-65807922b6f6",
+            "content": "招商银行",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "e24716c3-22fc-4bdc-a54e-78d0c0f2c1e0",
+            "columnId": "1380c7bd-dee8-4fb9-8564-fc30809c868d",
+            "tagId": "b7952244-bba3-45b1-bc7d-e2f684b5dd48",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "74bb9187-a009-409c-b285-47ff2e920432",
+            "columnId": "8aac164c-f81e-4e3c-a701-1508ced64a12",
+            "content": "Java",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "bcc31fc9-f31f-4271-9fa6-5b88767ac031",
+            "columnId": "7ad1ccd0-30a7-4d2b-b298-91d9dab1d201",
+            "tagId": "0d83899c-fe61-472b-8e58-9f849948ce95",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "9e88cb00-30f7-4832-9254-edab015fe9cc",
+            "columnId": "22c8d16b-5d86-4611-866f-542b0c03f32b",
+            "tagId": "02a1bd1e-a893-4a40-847b-93981e024c98",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "cb2d6d34-2dc4-4013-b9ec-99df94ee5da4",
+            "columnId": "2b3aec57-dbd7-4984-afa7-d5b851359f47",
+            "content": "",
+            "hasValidFrontmatter": null
+          }
+        ]
+      },
+      {
+        "id": "3451cc2f-f9eb-429d-8dec-6d9c0eeda6b6",
+        "index": 5,
+        "sourceId": null,
+        "creationDateTime": "2024-09-02T13:46:49.205Z",
+        "lastEditedDateTime": "2024-09-02T13:46:49.205Z",
+        "cells": [
+          {
+            "id": "bb446af3-aebb-447d-8149-984a975ca283",
+            "columnId": "36029628-f9bf-4ad7-9c48-65807922b6f6",
+            "content": "",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "2f95f80e-8a98-464d-a3b0-ad488acc2018",
+            "columnId": "1380c7bd-dee8-4fb9-8564-fc30809c868d",
+            "tagId": null,
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "258b3f6b-a91c-4514-a015-70199327582d",
+            "columnId": "8aac164c-f81e-4e3c-a701-1508ced64a12",
+            "content": "",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "94102523-08fd-4cf2-9dd6-d41251fe402a",
+            "columnId": "7ad1ccd0-30a7-4d2b-b298-91d9dab1d201",
+            "tagId": null,
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "859eac31-8e6e-4cc2-aff2-dd430c75c1c4",
+            "columnId": "22c8d16b-5d86-4611-866f-542b0c03f32b",
+            "tagId": null,
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "55c80a4f-3905-47b6-bc5d-690f9bbda966",
+            "columnId": "2b3aec57-dbd7-4984-afa7-d5b851359f47",
+            "content": "",
+            "hasValidFrontmatter": null
+          }
+        ]
+      },
+      {
+        "id": "504d140d-fcdc-4d19-a8d3-b34ff2b19217",
+        "index": 6,
+        "sourceId": null,
+        "creationDateTime": "2024-09-02T13:46:50.226Z",
+        "lastEditedDateTime": "2024-09-02T13:46:50.226Z",
+        "cells": [
+          {
+            "id": "47fcad82-fe8d-4901-b04f-b5a0338cb9fc",
+            "columnId": "36029628-f9bf-4ad7-9c48-65807922b6f6",
+            "content": "",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "9bece981-43a5-415c-9501-e5667d2c3a54",
+            "columnId": "1380c7bd-dee8-4fb9-8564-fc30809c868d",
+            "tagId": null,
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "1a5e7c81-d9d7-4a2f-b9db-0636c4683cc0",
+            "columnId": "8aac164c-f81e-4e3c-a701-1508ced64a12",
+            "content": "",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "8edf3049-691e-4167-8ce7-c2b5d0773c5b",
+            "columnId": "7ad1ccd0-30a7-4d2b-b298-91d9dab1d201",
+            "tagId": null,
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "781bcd29-2fd4-4f27-89b3-fec7457dc09e",
+            "columnId": "22c8d16b-5d86-4611-866f-542b0c03f32b",
+            "tagId": null,
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "c90bb514-f732-44e1-b2c6-3acbaf02fa1f",
+            "columnId": "2b3aec57-dbd7-4984-afa7-d5b851359f47",
+            "content": "",
+            "hasValidFrontmatter": null
+          }
+        ]
+      },
+      {
+        "id": "60b5a17b-dbc5-4609-a4d8-0627751b317b",
+        "index": 7,
+        "sourceId": null,
+        "creationDateTime": "2024-09-02T13:46:51.049Z",
+        "lastEditedDateTime": "2024-09-02T13:48:06.616Z",
+        "cells": [
+          {
+            "id": "775dfc87-b309-41b7-ae7d-3df08e29632f",
+            "columnId": "36029628-f9bf-4ad7-9c48-65807922b6f6",
+            "content": "海信",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "e849816b-ed11-4ea9-a32c-81de2a70b351",
+            "columnId": "1380c7bd-dee8-4fb9-8564-fc30809c868d",
+            "tagId": "9141546d-80ce-412b-950d-b41c9276aac2",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "d64ea960-35c3-41d5-abe6-35fd995a8559",
+            "columnId": "8aac164c-f81e-4e3c-a701-1508ced64a12",
+            "content": "Java",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "fbcf85c0-f27a-4624-9301-c165ff986aab",
+            "columnId": "7ad1ccd0-30a7-4d2b-b298-91d9dab1d201",
+            "tagId": "0d83899c-fe61-472b-8e58-9f849948ce95",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "445006a5-3328-4867-999c-d81bacd8c30f",
+            "columnId": "22c8d16b-5d86-4611-866f-542b0c03f32b",
+            "tagId": null,
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "6aaefca8-620c-493c-b805-d775bebb9d8c",
+            "columnId": "2b3aec57-dbd7-4984-afa7-d5b851359f47",
+            "content": "错过笔试",
+            "hasValidFrontmatter": null
+          }
+        ]
+      },
+      {
+        "id": "afc73638-59ad-4df8-91c7-bc7cc9c1b6a0",
+        "index": 8,
+        "sourceId": null,
+        "creationDateTime": "2024-09-02T13:49:32.168Z",
+        "lastEditedDateTime": "2024-09-02T13:50:27.494Z",
+        "cells": [
+          {
+            "id": "5c2afef0-dfde-4429-b70c-91a1e1b9ba4a",
+            "columnId": "36029628-f9bf-4ad7-9c48-65807922b6f6",
+            "content": "联想",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "bfb920e0-ee94-4cc1-aece-a2a5d332f348",
+            "columnId": "1380c7bd-dee8-4fb9-8564-fc30809c868d",
+            "tagId": "1d69c12a-dceb-48f0-9ab5-9e885d258d99",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "ba9165e3-d159-499a-afc5-a1617a06cce2",
+            "columnId": "8aac164c-f81e-4e3c-a701-1508ced64a12",
+            "content": "Java",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "ee4169e5-5886-4f68-9d4a-a307f8311690",
+            "columnId": "7ad1ccd0-30a7-4d2b-b298-91d9dab1d201",
+            "tagId": "0d83899c-fe61-472b-8e58-9f849948ce95",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "89c3116a-2ef8-48d1-a728-041dec93211e",
+            "columnId": "22c8d16b-5d86-4611-866f-542b0c03f32b",
+            "tagId": "02a1bd1e-a893-4a40-847b-93981e024c98",
+            "hasValidFrontmatter": null
+          },
+          {
+            "id": "45672537-930a-4177-b16e-94c33f662060",
+            "columnId": "2b3aec57-dbd7-4984-afa7-d5b851359f47",
+            "content": "可能完结",
+            "hasValidFrontmatter": null
+          }
+        ]
+      }
+    ],
+    "filters": [
+      {
+        "id": "d581ff37-a379-45a1-b226-1bf920178cae",
+        "columnId": "36029628-f9bf-4ad7-9c48-65807922b6f6",
+        "operator": "or",
+        "isEnabled": true,
+        "type": "text",
+        "condition": "is",
+        "text": ""
+      }
+    ],
+    "sources": [],
+    "settings": {
+      "numFrozenColumns": 1,
+      "showCalculationRow": true
+    },
+    "externalRowOrder": []
+  },
+  "pluginVersion": "8.16.1"
+}
