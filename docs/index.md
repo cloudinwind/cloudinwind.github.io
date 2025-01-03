@@ -21,6 +21,19 @@
 开源地址：https://docs.qq.com/doc/p/aec47ed20c2170d9f680ceaaf81b2b0c8aa7a2a9
 
 
+## 清华数院
+
+开源地址：
+```cardlink
+url: https://mathloveyou.github.io/
+title: "Welcome to this MathLoveYou! - 清华大学数学课程学习指南"
+description: "清华大学数学课程学习指南旨在帮助本科生学习微积分、线性代数等基础课程，减小信息壁垒和资源短缺造成的不必要困难。"
+host: mathloveyou.github.io
+favicon: assets/images/favicon.png
+```
+
+
+
 ## 上海交通大学生存手册
 
 > 初入大学可以借鉴
