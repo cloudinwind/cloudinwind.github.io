@@ -11,6 +11,8 @@ halo:
   site: http://119.3.239.131:8080
   name: d87a882f-9995-4976-9a14-5386d5bdda2e
   publish: true
+NotionID-cloudinwind: 17001505-cfbe-81fe-b1e4-e84b7802f1d1
+link-cloudinwind: https://cloudinwind.notion.site/redis-17001505cfbe81feb1e4e84b7802f1d1
 ---
 
 ## 安装 redis
