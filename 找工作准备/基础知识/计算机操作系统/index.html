@@ -1,0 +1,6625 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="小风">
+      
+      
+        <link rel="canonical" href="https://www.cloudinwind.github.io/%E6%89%BE%E5%B7%A5%E4%BD%9C%E5%87%86%E5%A4%87/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+      
+      
+        <link rel="prev" href="../Java36%E8%AE%B2/">
+      
+      
+        <link rel="next" href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+      
+      
+      <link rel="icon" href="https://pic.imgdb.cn/item/66d2d740d9c307b7e91a82b4.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>计算机操作系统 - 小风的代码世界</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto Slab";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="default" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="小风的代码世界" class="md-header__button md-logo" aria-label="小风的代码世界" data-md-component="logo">
+      
+  <img src="https://pic.imgdb.cn/item/66d2d740d9c307b7e91a82b4.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            小风的代码世界
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              计算机操作系统
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="default" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cloudinwind/cloudinwind.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudinwind/cloudinwind.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  自学
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tags/" class="md-tabs__link">
+        
+  
+    
+  
+  标签
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E4%B8%80%E4%BA%9Bdiy/Halo%E9%99%84%E4%BB%B6%E5%AD%98%E5%82%A8/" class="md-tabs__link">
+          
+  
+    
+  
+  一些diy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/CS%20%E4%BF%9D%E7%A0%94%E6%9C%BA%E8%AF%95%E5%87%86%E5%A4%87%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+          
+  
+    
+  
+  保研圈
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../JVM/" class="md-tabs__link">
+          
+  
+    
+  
+  找工作准备
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="小风的代码世界" class="md-nav__button md-logo" aria-label="小风的代码世界" data-md-component="logo">
+      
+  <img src="https://pic.imgdb.cn/item/66d2d740d9c307b7e91a82b4.jpg" alt="logo">
+
+    </a>
+    小风的代码世界
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cloudinwind/cloudinwind.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudinwind/cloudinwind.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    自学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    标签
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    一些diy
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            一些diy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/Halo%E9%99%84%E4%BB%B6%E5%AD%98%E5%82%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    个人网站 #图床配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/Jupyter%E4%B8%AD%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jupyter中配置虚拟环境
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/TXT%20%E8%BD%AC%20EPUB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TXT 转 EPUB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/VSCode%20%E9%85%8D%E7%BD%AE%20Java%20%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSCode 配置 Java 环境
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/docker%E5%AE%89%E8%A3%85mysql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker安装mysql
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/navicat%E7%9B%B8%E5%85%B3%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Navicat相关安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/pyteria%20%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pyteria 环境配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/ubuntu%2022.04%20%E5%AE%89%E8%A3%85%20docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ubuntu 22.04 安装 docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/%E4%BD%BF%E7%94%A8NotionNext%E5%AE%8C%E6%88%90%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用NotionNext完成博客部署
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/%E5%85%B3%E4%BA%8Edocker%E9%95%9C%E5%83%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    关于docker镜像
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文本格式转换
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E6%A0%87/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    服务器中添加图标
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    服务器安装redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%85%A8%E8%BF%87%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    环境配置全过程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    保研圈
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            保研圈
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    保研必知
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            保研必知
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/CS%20%E4%BF%9D%E7%A0%94%E6%9C%BA%E8%AF%95%E5%87%86%E5%A4%87%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS 保研机试准备指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/CS%20%E4%BF%9D%E7%A0%94%E9%99%A2%E6%A0%A1%E5%BC%BA%E5%BC%B1com%E7%9B%98%E7%82%B9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS 保研院校强弱com盘点
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/CS%E4%BF%9D%E7%A0%94%20%E9%99%A2%E6%A0%A1%E5%A1%AB%E6%8A%A5%E6%95%B0%E9%87%8F%E5%A4%A7%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS保研 院校填报数量大解析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/CS%E4%BF%9D%E7%A0%94%E9%99%A2%E6%A0%A1%E5%A4%A7%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS保研 院校机试大解析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/CS%E4%BF%9D%E7%A0%94%E9%99%A2%E6%A0%A1%E6%9C%BA%E8%AF%95%E5%A4%A7%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS保研 院校机试大解析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    个人简历
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/%E4%BF%9D%E7%A0%94%E7%94%9F%E5%BF%85%E7%9F%A5%E7%9A%84%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    保研生必知的知识
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/%E4%BF%9D%E7%A0%94%E9%BB%91%E8%AF%9D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    保研黑话
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/%E5%90%84%E5%AD%A6%E9%99%A2%E5%AF%B9rank%E7%9A%84%E8%A6%81%E6%B1%82/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    各学院对rank的要求
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/%E5%A4%A7%E4%B8%89%E4%BF%9D%E7%A0%94%E7%94%9F%E7%BB%9D%E4%B8%8D%E8%83%BD%E9%94%99%E8%BF%87%E7%9A%84%E5%B9%B2%E8%B4%A7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    大三保研生绝不能错过的干货
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/%E8%80%81%E5%B8%88%E6%8E%A8%E8%8D%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    老师推荐
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    辅导全流程
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            辅导全流程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/Tips/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tips
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E6%8B%9F%E5%BD%95%E5%8F%96%E7%BB%93%E6%9E%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第0级：
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E9%80%9A%E7%9F%A52025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    院校通知2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_4" id="__nav_4_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2024拟录取名单
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            2024拟录取名单
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E4%B8%8A%E4%BA%A4%E7%94%B5%E9%99%A22024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    上交电院2024推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E5%A4%A7%E5%AD%A6%E4%BF%A1%E6%81%AF%E5%AD%A6%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中国人民大学信息学院2024届推免拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E4%B8%AD%E7%A7%91%E5%A4%A72024%E6%8B%9F%E5%BD%95%E5%8F%96%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中科大2024拟录取结果分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E4%BA%BA%E5%A4%A7%E9%AB%98%E7%93%B42024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    上交电院2024推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    北京大学计算机学院2024届推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8C%97%E5%A4%A7%E6%95%B0%E5%AD%A6%E7%A7%91%E5%AD%A6%E5%AD%A6%E9%99%A2%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%93%E4%B8%9A2024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    北大数学科学学院大数据专业2024推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8C%97%E5%A4%A7%E6%99%BA%E8%83%BD%E5%AD%A6%E9%99%A2%E3%80%81%E5%89%8D%E6%B2%BF%E4%BA%A4%E5%8F%89%E5%92%8C%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%862024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    北大智能学院、前沿交叉和信息管理2024届推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8C%97%E5%A4%A7%E6%B7%B1%E5%9C%B32024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    北大深圳2024届推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8C%97%E5%A4%A7%E8%BD%AF%E5%BE%AE2024%E5%B1%8A%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    北大软微2024届拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8D%97%E5%A4%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E9%99%A22024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    南大人工智能学院2024拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8D%97%E5%A4%A7%E6%99%BA%E8%83%BD%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E5%AD%A6%E9%99%A22024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    南大智能科学与技术学院2024拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8D%97%E5%A4%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    南大计算机系2024拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8D%97%E5%A4%A7%E8%BD%AF%E4%BB%B6%E5%AD%A6%E9%99%A22024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    南大软件学院2024推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%9B%BD%E9%98%B2%E7%A7%91%E5%A4%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%81%E7%94%B5%E5%AD%90%E5%AF%B9%E6%8A%97%E7%AD%892024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    国防科大计算机、电子对抗等2024拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%A4%8D%E6%97%A6%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6%E4%B8%8E%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A22024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复旦信息科学与工程学院2024推免拟录取
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%A4%8D%E6%97%A6%E5%B7%A5%E7%A0%94%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复旦工研院2024届推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%A4%8D%E6%97%A6%E7%B1%BB%E8%84%91%E6%99%BA%E8%83%BD%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%99%A22024%E5%B1%8A%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复旦类脑智能科学与技术研究院2024届拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%A4%8D%E6%97%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E9%99%A22024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复旦计算机学院2024推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B5%99%E5%A4%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    浙大工程师学院2024届推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B5%99%E5%A4%A7%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E3%80%81%E6%B5%B7%E6%B4%8B%E3%80%81%E5%9B%BD%E9%99%85%E8%81%94%E5%90%88%E5%AD%A6%E9%99%A22024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    浙大航空航天、海洋、国际联合学院2024推免拟
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B5%99%E5%A4%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E7%9B%B4%E5%8D%9A%E7%94%9F%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    浙大计算机学院2024届推免直博生名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B5%99%E5%A4%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E9%99%A22024%E6%8E%A8%E5%85%8D%E7%A1%95%E5%A3%AB%E7%94%9F%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    浙大计算机学院2024推免硕士生拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B5%99%E5%A4%A7%E8%BD%AF%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    浙大软院2024届推免录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E4%BA%A4%E5%8F%89%E4%BF%A1%E6%81%AF%E7%A0%94%E7%A9%B6%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华交叉信息研究院2024届推免拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E5%85%A8%E7%90%83%E5%88%9B%E6%96%B0%E5%AD%A6%E9%99%A2%E5%92%8C%E9%AB%98%E7%AD%89%E7%A0%94%E7%A9%B6%E9%99%A2%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华全球创新学院和高等研究院2024届拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E7%B3%BB2024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华大学自动化系2024推免拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E6%B7%B1%E5%9C%B32024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华深圳2024拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E7%BD%91%E5%AE%892024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华网安2024届推免拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E8%B4%B5%E7%B3%BB2024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华贵系2024届推免拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E8%BD%AF%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华软院2024届推免拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_5" id="__nav_4_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2025拟录取名单
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            2025拟录取名单
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2025%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/2.%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.北京大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2025%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/3.%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.上海交通大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2025%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/8.%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.中国人民大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_6" id="__nav_4_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    院校考核经验
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            院校考核经验
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/1.%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.清华大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/10.%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.武汉大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/11.%E5%8D%8E%E4%B8%AD%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.华中科技大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/12.%E5%90%8C%E6%B5%8E%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.同济大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/13.%E5%93%88%E5%B0%94%E6%BB%A8%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.哈尔滨工业大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/14.%E8%A5%BF%E5%AE%89%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.西安交通大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/15.%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.南开大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/16.%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16.中山大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/17.%E5%8C%97%E4%BA%AC%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17.北京理工大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/18.%E5%8D%8E%E4%B8%9C%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.华东师范大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/19.%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.电子科技大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/2.%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.北京大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/20.%E5%A4%A9%E6%B4%A5%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20.天津大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/21.%E4%B8%9C%E5%8D%97%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21.东南大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/22.%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22.厦门大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/23.%E5%8D%8E%E5%8D%97%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23.华南理工大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/24.%E5%8C%97%E4%BA%AC%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24.北京师范大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/25.%E5%9B%BD%E9%98%B2%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25.国防科技大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/26.%E5%9B%9B%E5%B7%9D%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    26.四川大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/27.%E5%B1%B1%E4%B8%9C%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    27.山东大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/28.%E5%90%89%E6%9E%97%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    28.吉林大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/29.%E8%A5%BF%E5%8C%97%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    29.西北工业大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/3.%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.上海交通大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/30.%E5%A4%A7%E8%BF%9E%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    30.大连理工大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/31.%E4%B8%AD%E5%8D%97%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    31.中南大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/32.%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    32.重庆大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/33.%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    33.湖南大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/34.%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    34.东北大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/4.%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.复旦大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/5.%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.浙江大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/6.%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.南京大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/7.%E4%B8%AD%E7%A7%91%E5%A4%A7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.中科大
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/8.%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.中国人民大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/9.%20%E5%8C%97%E4%BA%AC%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. 北京航空航天大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/%E4%B8%80%E4%BA%9B%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    一些研究方向
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0级
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_6_37" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_6_37" id="__nav_4_2_6_37_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    中科院
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_6_37_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_6_37">
+            <span class="md-nav__icon md-icon"></span>
+            中科院
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/%E4%B8%AD%E7%A7%91%E9%99%A2/%E4%B8%AD%E7%A7%91%E9%99%A2%E4%BF%A1%E5%B7%A5%E6%89%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中科院信工所
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/%E4%B8%AD%E7%A7%91%E9%99%A2/%E4%B8%AD%E7%A7%91%E9%99%A2%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中科院自动化所
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/%E4%B8%AD%E7%A7%91%E9%99%A2/%E4%B8%AD%E7%A7%91%E9%99%A2%E8%AE%A1%E7%AE%97%E6%89%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中科院计算所
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/%E4%B8%AD%E7%A7%91%E9%99%A2/%E4%B8%AD%E7%A7%91%E9%99%A2%E8%BD%AF%E4%BB%B6%E6%89%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中科院软件所
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    找工作准备
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            找工作准备
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    基础知识
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            基础知识
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JVM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JVM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Java%20%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java 基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Java36%E8%AE%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    计算机操作系统
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    计算机操作系统
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 操作系统基本特征
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 操作系统基本特征">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 并发
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 共享
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 虚拟
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 异步
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 中断
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 中断">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 中断定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 中断的好处
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 中断分类
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 系统调用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 系统调用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 操作系统与应用的边界
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 系统调用的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 系统调用的作用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 系统调用中断处理程序的流程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 操作系统基本功能:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 进程管理（重要）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 进程管理（重要）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 进程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 线程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 进程和线程的区别
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进程状态的切换（生命周期）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 进程调度算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 进程同步
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 进程通信
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 死锁（重要）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 死锁（重要）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 死锁的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 产生死锁的必要条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 解决死锁的方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 内存管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 内存管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 虚拟内存（了解）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 分页系统地址映射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 页面置换算法（重点）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 分段（了解）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 段页式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 分页和分段的比较
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7 快表（掌握）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 磁盘管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 磁盘管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 磁盘结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 磁盘调度算法（重点）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 链接
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 常见问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统相关:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程相关:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存相关:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      磁盘管理相关
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    计算机网络
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%87%91%E5%85%B8%E9%A2%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    金典题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    投递
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            投递
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E5%B8%B8%E7%94%A8%E5%86%85%E5%AE%B9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常用内容
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    招商银行
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    面试总结
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            面试总结
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/360/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    360
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/58%E5%90%8C%E5%9F%8E/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    58同城
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/OPPO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OPPO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/Shopee%20%E8%99%BE%E7%9A%AE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shopee 虾皮
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/TCL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TCL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/Vivo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vivo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E4%B8%AD%E5%85%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中兴
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E4%B8%AD%E5%9B%BD%E7%BD%91%E5%AE%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中国网安
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E5%8D%8E%E4%B8%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    华为
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E5%B0%8F%E7%B1%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    小米
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E5%B0%8F%E7%BA%A2%E4%B9%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    小红书
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E5%B8%86%E8%BD%AF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    帆软
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    招商银行
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%8B%BC%E5%A4%9A%E5%A4%9A/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    拼多多
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%90%BA%E7%A8%8B%E9%9B%86%E5%9B%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    携程集团
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%B5%B7%E4%BF%A1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    海信
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%B5%B7%E5%85%89%E4%BF%A1%E6%81%AF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    海光信息
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%B5%B7%E5%BA%B7%E5%A8%81%E8%A7%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    海康威视
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%B7%B1%E4%BF%A1%E6%9C%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    深信服
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E7%99%BE%E5%BA%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    百度
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    科大讯飞
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E7%BE%8E%E5%9B%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    美团
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E8%81%94%E6%83%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    联想
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E8%8D%A3%E8%80%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    荣耀
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    面试总结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E9%A1%BA%E9%A3%8E%E7%A7%91%E6%8A%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    顺风科技
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    算法
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            算法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/1.%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/2.%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    链表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/3.%E5%93%88%E5%B8%8C%E8%A1%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    哈希表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/4.%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字符串
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/5.%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    双指针法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/6.%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    栈和队列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/7.%E4%BA%8C%E5%8F%89%E6%A0%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    二叉树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/8.%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.动态规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/ACWing%20%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ACWing 算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    项目
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            项目
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%A1%B9%E7%9B%AE/%E7%89%9B%E5%AE%A2%E7%A4%BE%E5%8C%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    牛客社区
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%A1%B9%E7%9B%AE/%E7%BD%91%E7%9B%98%E7%B3%BB%E7%BB%9F%202.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    网盘系统 2.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 操作系统基本特征
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 操作系统基本特征">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 并发
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 共享
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 虚拟
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 异步
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 中断
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 中断">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 中断定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 中断的好处
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 中断分类
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 系统调用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 系统调用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 操作系统与应用的边界
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 系统调用的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 系统调用的作用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 系统调用中断处理程序的流程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 操作系统基本功能:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 进程管理（重要）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 进程管理（重要）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 进程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 线程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 进程和线程的区别
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进程状态的切换（生命周期）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 进程调度算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 进程同步
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 进程通信
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 死锁（重要）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 死锁（重要）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 死锁的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 产生死锁的必要条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 解决死锁的方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 内存管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 内存管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 虚拟内存（了解）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 分页系统地址映射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 页面置换算法（重点）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 分段（了解）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 段页式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 分页和分段的比较
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7 快表（掌握）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 磁盘管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 磁盘管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 磁盘结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 磁盘调度算法（重点）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 链接
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 常见问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统相关:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程相关:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存相关:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      磁盘管理相关
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+<!--
+Hack: check whether the content contains a h1 headline. If it
+doesn't, the page title (or respectively site name) is used
+as the main headline.
+-->
+
+    <h1>计算机操作系统</h1>
+
+
+<!-- Markdown content -->
+
+    
+
+    
+
+    <div class="toc">
+<ul>
+<li><a href="#1">1. 操作系统基本特征</a><ul>
+<li><a href="#1_1">1. 并发</a></li>
+<li><a href="#2">2. 共享</a></li>
+<li><a href="#3">3. 虚拟</a></li>
+<li><a href="#4">4. 异步</a></li>
+</ul>
+</li>
+<li><a href="#12">1.2 中断</a><ul>
+<li><a href="#1_2">1. 中断定义</a></li>
+<li><a href="#2_1">2. 中断的好处</a></li>
+<li><a href="#3_1">3. 中断分类</a></li>
+</ul>
+</li>
+<li><a href="#13">1.3 系统调用</a><ul>
+<li><a href="#1_3">1. 操作系统与应用的边界</a></li>
+<li><a href="#2_2">2. 系统调用的定义</a></li>
+<li><a href="#3_2">3. 系统调用的作用</a></li>
+<li><a href="#24">2.4 系统调用中断处理程序的流程</a></li>
+</ul>
+</li>
+<li><a href="#2_3">2. 操作系统基本功能:</a></li>
+<li><a href="#21">2.1 进程管理（重要）</a><ul>
+<li><a href="#1_4">1. 进程</a></li>
+<li><a href="#2_4">2. 线程</a></li>
+<li><a href="#3_3">3. 进程和线程的区别</a></li>
+<li><a href="#4_1">4. 进程状态的切换（生命周期）</a></li>
+<li><a href="#5">5. 进程调度算法</a></li>
+<li><a href="#6">6. 进程同步</a></li>
+<li><a href="#7">7. 进程通信</a></li>
+</ul>
+</li>
+<li><a href="#3_4">3. 死锁（重要）</a><ul>
+<li><a href="#1_5">1. 死锁的定义</a></li>
+<li><a href="#2_5">2. 产生死锁的必要条件</a></li>
+<li><a href="#3_5">3. 解决死锁的方法</a></li>
+</ul>
+</li>
+<li><a href="#4_2">4. 内存管理</a><ul>
+<li><a href="#41">4.1 虚拟内存（了解）</a></li>
+<li><a href="#42">4.2 分页系统地址映射</a></li>
+<li><a href="#43">4.3 页面置换算法（重点）</a></li>
+<li><a href="#44">4.4 分段（了解）</a></li>
+<li><a href="#45">4.5 段页式</a></li>
+<li><a href="#46">4.6 分页和分段的比较</a></li>
+<li><a href="#47">4.7 快表（掌握）</a></li>
+</ul>
+</li>
+<li><a href="#5_1">5. 磁盘管理</a><ul>
+<li><a href="#51">5.1 磁盘结构</a></li>
+<li><a href="#42_1">4.2 磁盘调度算法（重点）</a></li>
+<li><a href="#43_1">4.3 链接</a></li>
+</ul>
+</li>
+<li><a href="#6_1">6. 常见问题</a><ul>
+<li><a href="#_1">系统相关:</a></li>
+<li><a href="#_2">进程相关:</a></li>
+<li><a href="#_3">内存相关:</a></li>
+<li><a href="#_4">磁盘管理相关</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="1">1. 操作系统基本特征<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 并发<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。</p>
+<p>并行需要硬件支持，如多流水线或者多处理器。</p>
+<p>操作系统通过引入进程和线程，使得程序能够并发运行。</p>
+<h3 id="2">2. 共享<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
+<p>有两种共享方式：互斥共享和同时共享。</p>
+<p><strong>互斥共享</strong>的资源称为临界资源，例如打印机等，在同一时间只允许一个进程访问，需要用同步机制来实现对临界资源的访问。</p>
+<h3 id="3">3. 虚拟<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>虚拟技术把一个物理实体转换为多个逻辑实体。</p>
+<p>利用多道程序设计技术，让每个用户都觉得有一个计算机专门为他服务。</p>
+<p>主要有两种虚拟技术：<strong>时分复用技术</strong>和<strong>空分复用技术</strong>。例如多个进程能在同一个处理器上并发执行使用了时分复用技术，让每个进程轮流占有处理器，每次只执行一小个时间片并快速切换。</p>
+<h3 id="4">4. 异步<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>异步指进程不是一次性执行完毕，而是走走停停，以不可知的速度向前推进。</p>
+<p>但只要运行环境相同，OS 需要保证程序运行的结果也要相同。</p>
+<h2 id="12">1.2 中断<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 中断定义<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p>中断（interrupt）是计算机系统中的基本机制之一。即：在计算机运行过程中，当发生某个事件后，CPU 会停止当前程序流，转而去处理该事件，并在处理完毕后继续执行原程序流。</p>
+<h3 id="2_1">2. 中断的好处<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>中断机制的好处是 <strong>化主动为被动，避免 CPU 轮询等待某条件成立</strong>。如果没有中断机制，那么“某个条件成立”就需要 CPU 轮询判断，这样就会增加系统的开销。而使用中断机制，就可以在条件成立之后，向 CPU 发送中断事件，强制中断 CPU 执行程序，转而去执行中断处理程序。</p>
+<h3 id="3_1">3. 中断分类<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p><strong>硬中断</strong></p>
+<p>硬中断由外部设备（例如：磁盘，网卡，键盘，时钟）产生，用来通知操作系统外设状态变化。</p>
+<blockquote>
+<p><strong>时钟中断：</strong> 一种硬中断，用于定期打断 CPU 执行的线程，以便切换给其他线程以得到执行机会。</p>
+</blockquote>
+<p>硬中断的处理流程如下：</p>
+<ul>
+<li>
+<ol>
+<li><strong>外设</strong> 将中断请求发送给中断控制器；</li>
+</ol>
+</li>
+<li>
+<ol>
+<li><strong>中断控制器</strong> 根据中断优先级，有序地将中断传递给 CPU；</li>
+</ol>
+</li>
+<li>
+<ol>
+<li><strong>CPU</strong> 终止执行当前程序流，将 CPU 所有寄存器的数值保存到栈中；</li>
+</ol>
+</li>
+<li>
+<ol>
+<li><strong>CPU</strong> 根据中断向量，从中断向量表中查找中断处理程序的入口地址，执行中断处理程序；</li>
+</ol>
+</li>
+<li>
+<ol>
+<li><strong>CPU</strong> 恢复寄存器中的数值，返回原程序流停止位置继续执行。</li>
+</ol>
+</li>
+</ul>
+<p><strong>软中断</strong></p>
+<p>软中断是一条 CPU 指令，由当前正在运行的进程产生。</p>
+<p>软中断模拟了硬中断的处理过程：</p>
+<ul>
+<li><strong>CPU</strong> 终止执行当前程序流，将 CPU 所有寄存器的数值保存到栈中；</li>
+<li><strong>CPU</strong> 根据中断向量，从中断向量表中查找中断处理程序的入口地址，执行中断处理程序；</li>
+<li><strong>CPU</strong> 恢复寄存器中的数值，返回原程序流停止位置继续执行。</li>
+</ul>
+<p><strong>异常:</strong> 由 CPU 执行指令的内部事件引起，如非法操作码、地址越界、算术溢出等。</p>
+<p><strong>系统调用：</strong> 是一种软中断处理程序，用于让程序从用户态陷入内核态，以执行相应的操作。</p>
+<h2 id="13">1.3 系统调用<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1. 操作系统与应用的边界<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>内核空间</strong></li>
+</ul>
+<p>操作系统（Operating System）是管理计算机硬件与软件资源的程序，操作系统内核驻留在受保护的内核空间。</p>
+<ul>
+<li><strong>用户空间</strong></li>
+</ul>
+<p>应用是运行在操作系统上运行的程序，工作在用户空间。</p>
+<ul>
+<li><strong>隔离</strong></li>
+</ul>
+<p>处于安全性和稳定性考虑，用户空间程序无法直接执行内核代码（例如：I/O 读写、创建新进程/线程），也无法访问内核数据，必须通过系统调用。</p>
+<h3 id="2_2">2. 系统调用的定义<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p><strong>系统调用（Syscall）</strong> 是一种软中断处理程序，用于让程序从用户态陷入内核态，以执行相应的操作。</p>
+<h3 id="3_2">3. 系统调用的作用<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<p>当发生系统调用时，会让程序从用户态陷入内核态，以执行相应的操作。</p>
+<h3 id="24">2.4 系统调用中断处理程序的流程<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<ol>
+<li>程序从用户态陷入内核态</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>根据系统调用号，在系统调用表中查找对应的系统调用函数的内存地址，执行系统调用函数。</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>程序从内核态返回用户态</li>
+</ol>
+</li>
+</ul>
+<p>补充:</p>
+<p><strong>什么是堆和栈？说一下堆栈都存储哪些数据？</strong></p>
+<p>​       栈区（stack）— 由<strong>编译器</strong>自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。</p>
+<p>​       堆区（heap） — 一般由<strong>程序员分配释放</strong>， 若程序员不释放，程序结束时可能由 OS 回收 。</p>
+<p><strong>如何理解分布式锁？</strong></p>
+<p>​       分布式锁，是控制分布式系统之间同步访问共享资源的一种方式。在分布式系统中，常常需要协调他们的动作。如果不同的系统或是同一个系统的不同主机之间共享了一个或一组资源，那么访问这些资源的时候，往往需要互斥来防止彼此干扰来保证一致性，在这种情况下，便需要使用到分布式锁。</p>
+<h2 id="2_3">2. 操作系统基本功能:<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h2>
+<p><strong>1. 进程管理</strong></p>
+<p>进程控制、进程同步、进程通信、死锁处理、处理机调度等。</p>
+<p><strong>2. 内存管理</strong></p>
+<p>内存分配、地址映射、内存保护与共享、虚拟内存等。</p>
+<p><strong>3. 文件管理</strong></p>
+<p>文件存储空间的管理、目录管理、文件读写管理和保护等。</p>
+<p><strong>4. 设备管理</strong></p>
+<p>完成用户的 I/O 请求，方便用户使用各种设备，并提高设备的利用率。</p>
+<p>主要包括缓冲管理、设备分配、设备处理、虛拟设备等。</p>
+<h2 id="21">2.1 进程管理（重要）<a class="headerlink" href="#21" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1. 进程<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<p><strong>进程是资源分配的基本单位</strong>，用来管理资源（例如：内存，文件，网络等资源）</p>
+<p>进程控制块 (Process Control Block, PCB) 描述进程的基本信息和运行状态，所谓的创建进程和撤销进程，都是指对 PCB 的操作。<strong>（PCB 是描述进程的数据结构）</strong></p>
+<p>进程的构成: 代码段（程序）、数据段（数据）、堆栈段（控制块 PCB）</p>
+<h3 id="2_4">2. 线程<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p><strong>线程是独立调度的基本单位。</strong></p>
+<p>一个进程中可以有多个线程，它们共享进程资源。</p>
+<blockquote>
+<p>QQ 和浏览器是两个进程，浏览器进程里面有很多线程，例如 HTTP 请求线程、事件响应线程、渲染线程等等，线程的并发执行使得在浏览器中点击一个新链接从而发起 HTTP 请求时，浏览器还可以响应用户的其它事件。</p>
+</blockquote>
+<h3 id="3_3">3. 进程和线程的区别<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<p>（一）拥有资源</p>
+<p><strong>进程是资源分配的基本单位</strong>，但是线程不拥有资源，线程可以访问隶属进程的资源。</p>
+<p>（二）调度</p>
+<p><strong>线程是独立调度的基本单位</strong>，在同一进程中，线程的切换不会引起进程切换，从一个进程内的线程切换到另一个进程中的线程时，会引起进程切换。</p>
+<p>（三）系统开销</p>
+<p>由于创建或撤销进程时，系统都要为之分配或回收资源，如内存空间、I/O 设备等，所付出的开销远大于创建或撤销线程时的开销。类似地，在进行进程切换时，涉及当前执行进程 CPU 环境的保存及新调度进程 CPU 环境的设置，而线程切换时只需保存和设置少量寄存器内容，开销很小。</p>
+<p>（四）通信方面</p>
+<p>进程间通信 (IPC) 需要进程同步和互斥手段的辅助，以保证数据的一致性。而线程间可以通过直接读或写同一进程中的数据段（如全局变量）来进行通信。</p>
+<p>只说出上面的即可，下表格帮助理解:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">进程</th>
+<th style="text-align: left;">线程</th>
+<th style="text-align: left;">协程</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">定义</td>
+<td style="text-align: left;">资源分配和拥有的基本单位</td>
+<td style="text-align: left;">程序执行的基本单位</td>
+<td>用户态的轻量级线程，线程内部调度的基本单位</td>
+</tr>
+<tr>
+<td style="text-align: left;">切换情况</td>
+<td style="text-align: left;">进程CPU环境(栈、寄存器、页表和文件句柄等)的保存以及新调度的进程CPU环境的设置</td>
+<td style="text-align: left;">保存和设置程序计数器、少量寄存器和栈的内容</td>
+<td>先将寄存器上下文和栈保存，等切换回来的时候再进行恢复</td>
+</tr>
+<tr>
+<td style="text-align: left;">切换者</td>
+<td style="text-align: left;">操作系统</td>
+<td style="text-align: left;">操作系统</td>
+<td>用户</td>
+</tr>
+<tr>
+<td style="text-align: left;">切换过程</td>
+<td style="text-align: left;">用户态-&gt;内核态-&gt;用户态</td>
+<td style="text-align: left;">用户态-&gt;内核态-&gt;用户态</td>
+<td>用户态(没有陷入内核)</td>
+</tr>
+<tr>
+<td style="text-align: left;">调用栈</td>
+<td style="text-align: left;">内核栈</td>
+<td style="text-align: left;">内核栈</td>
+<td>用户栈</td>
+</tr>
+<tr>
+<td style="text-align: left;">拥有资源</td>
+<td style="text-align: left;">CPU资源、内存资源、文件资源和句柄等</td>
+<td style="text-align: left;">程序计数器、寄存器、栈和状态字</td>
+<td>拥有自己的寄存器上下文和栈</td>
+</tr>
+<tr>
+<td style="text-align: left;">并发性</td>
+<td style="text-align: left;">不同进程之间切换实现并发，各自占有CPU实现并行</td>
+<td style="text-align: left;">一个进程内部的多个线程并发执行</td>
+<td>同一时间只能执行一个协程，而其他协程处于休眠状态，适合对任务进行分时处理</td>
+</tr>
+<tr>
+<td style="text-align: left;">系统开销</td>
+<td style="text-align: left;">切换虚拟地址空间，切换内核栈和硬件上下文，CPU高速缓存失效、页表切换，开销很大</td>
+<td style="text-align: left;">切换时只需保存和设置少量寄存器内容，因此开销很小</td>
+<td>直接操作栈则基本没有内核切换的开销，可以不加锁的访问全局变量，所以上下文的切换非常快</td>
+</tr>
+<tr>
+<td style="text-align: left;">通信方面</td>
+<td style="text-align: left;">进程间通信需要借助操作系统</td>
+<td style="text-align: left;">线程间可以直接读写进程数据段(如全局变量)来进行通信</td>
+<td>共享内存、消息队列</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_1">4. 进程状态的切换（生命周期）<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="https://img-blog.csdnimg.cn/20200704191816991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dsNjIwMzIx,size_16,color_FFFFFF,t_70" /></p>
+<p><strong>就绪状态（ready）</strong>：等待被调度</p>
+<p><strong>运行状态（running）</strong></p>
+<p><strong>阻塞状态（waiting）</strong>：等待资源</p>
+<ul>
+<li>新建态（new）。进程刚建立，还没有被OS提交到可运行进程队列。</li>
+<li>终止态（exit）。进程已正常或异常结束，被OS从可运行进程队列中释放出来。</li>
+<li>
+<p>新建态—就绪态。对一个处于新建态的进程，在就绪队列能够接纳新进程时，将被系统接收并进入就绪队列，此时的进程状态就从新建态转为就绪态</p>
+</li>
+<li>
+<p><strong>只有就绪态和运行态可以相互转换，</strong>其它的都是<strong>单向转换</strong>。就绪状态的进程通过进程调度算法 从而获得 CPU 时间，转为运行状态；而运行状态的进程，在分配给它的 CPU 时间片用完之后 就会转为就绪状态，等待下一次调度。</p>
+</li>
+<li>
+<p><strong>阻塞状态是缺少需要的资源</strong>从而由运行状态转换而来，但是该资源不包括 CPU 时间，缺少 CPU 时间会从运行态转换为就绪态。</p>
+</li>
+<li>进程只能自己阻塞自己，因为只有进程自身才知道何时需要等待某种事件的发生</li>
+</ul>
+<p><strong>七种状态模型：</strong></p>
+<p><img alt="" src="https://img-blog.csdnimg.cn/20200704191953550.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dsNjIwMzIx,size_16,color_FFFFFF,t_70" /></p>
+<ul>
+<li>挂起就绪态（ready suspend）：进程具备运行条件，但目前在辅助存储器中，只有当进程被兑换到主存时才能调度执行。</li>
+<li>挂起阻塞态（blocked suspend）：进程正在等待某一事件发生且进程在辅助存储器中。</li>
+</ul>
+<h3 id="5">5. 进程调度算法<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p><strong>1.批处理系统</strong></p>
+<p>批处理系统没有太多的用户操作，在该系统中，调度算法目标是保证吞吐量和周转时间（从提交到终止的时间）。</p>
+<p><strong>1.1 先来先服务 first-come first-serverd（FCFS）</strong></p>
+<p><strong>非抢占式的调度算法，按照请求的顺序进行调度。</strong></p>
+<p><strong>有利于长作业，但不利于短作业</strong>，因为短作业必须一直等待前面的长作业执行完毕才能执行，而长作业又需要执行很长时间，造成了短作业等待时间过长。</p>
+<p><strong>1.2  短作业优先 shortest job first（SJF）</strong></p>
+<p><strong>非抢占式的调度算法，按估计运行时间最短的顺序进行调度。</strong></p>
+<p>长作业有可能会饿死，处于一直等待短作业执行完毕的状态。因为如果一直有短作业到来，那么长作业永远得不到调度。</p>
+<p><strong>1.3 最短剩余时间优先 shortest remaining time next（SRTN）</strong></p>
+<p><strong>最短作业优先的抢占式版本，按剩余运行时间的顺序进行调度。</strong> </p>
+<p>当一个新的作业到达时，其整个运行时间与当前正在运行的进程的剩余时间作比较。如果新的进程需要的时间更少，则挂起当前进程， 运行新的进程。否则新的进程等待。</p>
+<p><strong>2. 交互式系统</strong></p>
+<p>交互式系统有大量的用户交互操作，在该系统中调度算法的目标是快速地进行响应</p>
+<p><strong>2.1 时间片轮转</strong></p>
+<p>将所有就绪进程按 FCFS （先来先服务） 的原则排成一个队列，每次调度时，<strong>把 CPU 时间分配给队首进程</strong>，该进程可以执行一个时间片。<strong>当时间片用完时</strong>，由计时器发出时钟中断，调度程序便停止该进程的执行，并将它送往就绪队列的末尾，同时继续把 CPU 时间分配给队首的进程。</p>
+<p>时间片轮转算法的<strong>效率</strong>和<strong>时间片的大小</strong>有很大关系</p>
+<ul>
+<li>进程切换都要保存进程的信息并且载入新进程的信息</li>
+<li>如果时间片太小，会导致进程切换得太频繁，在进程切换上就会花过多时间。</li>
+</ul>
+<p><strong>2.2 优先级调度</strong></p>
+<p>为每个进程分配一个优先级，按优先级进行调度。</p>
+<p>为了防止低优先级的进程永远等不到调度，可以随着时间的推移增加等待进程的优先级。</p>
+<p><strong>2.3 多级反馈队列（重点）</strong></p>
+<p>​        如果一个进程需要执行 100 个时间片，如果采用时间片轮转调度算法，那么需要交换 100 次。多级队列是为这种需要连续执行多个时间片的进程考虑。</p>
+<p>​        设置了多个队列，每个队列时间片大小都不同，例如 1,2,4,8,..。进程在第一个队列没执行完，就会被移到下一个队列。</p>
+<p>​       </p>
+<p>​       多级反馈队列调度算法，“多级” 在于有多个不同优先级的队列，“反馈” 在于如果有进程加入优先级高的队列时立即停止当前任务，转去执行优先级高的队列中进程，上述过程循环调度就形成多级反馈队列调度算法。</p>
+<p>​       每个队列优先权也不同，<strong>最上面的优先权最高</strong>。因此只有上一个队列没有进程在排队，才能调度当前队列上的进程。</p>
+<p>​       可以将这种调度算法看成是<strong>时间片轮转调度算法和优先级调度算法</strong>的结合。</p>
+<h3 id="6">6. 进程同步<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p><strong>1. 临界区</strong></p>
+<p><strong>对临界资源进行访问的那段代码称为临界区</strong>。</p>
+<p>为了互斥访问临界资源，每个进程在进入临界区之前，需要先进行检查。</p>
+<p><strong>2. 同步与互斥</strong></p>
+<ul>
+<li>
+<p>同步：多个进程访问<strong>同一个资源</strong>有一定的先后执行顺序。</p>
+</li>
+<li>
+<p>互斥：多个进程在<strong>同一时刻</strong>只有一个进程能进入临界区。</p>
+</li>
+</ul>
+<p><strong>3. 信号量</strong></p>
+<p>信号量（Semaphore）是一个整型变量，可以对其执行 down 和 up 操作，也就是常见的 P 和 V 操作。</p>
+<ul>
+<li><strong>down</strong> : 如果信号量大于 0 ，执行 -1 操作；如果<strong>信号量等于 0，进程睡眠</strong>，等待信号量大于 0；（阻塞）</li>
+<li><strong>up</strong> ：对信号量执行 +1 操作，唤醒睡眠的进程让其完成 down 操作。（唤醒）</li>
+</ul>
+<p>down 和 up 操作需要被设计成<strong>原语，不可分割</strong>，通常的做法是在执行这些操作的时候屏蔽中断。</p>
+<p>如果信号量的取值只能为 0 或者 1，那么就成为了 <strong>互斥量（Mutex）</strong> ，0 表示临界区已经加锁，1 表示临界区解锁。</p>
+<p>补充: 经典同步问题（了解即可）</p>
+<ul>
+<li>
+<p>生产者-消费者问题，了解即可</p>
+</li>
+<li>
+<p>读者 - 写者问题</p>
+</li>
+</ul>
+<p>允许多个进程同时对数据进行读操作，但是不允许读和写以及写和写操作同时发生。读者优先策略</p>
+<ul>
+<li>哲学家进餐问题</li>
+</ul>
+<p>五个哲学家围着一张圆桌，每个哲学家面前放着食物。哲学家的生活有两种交替活动：吃饭以及思考。当一个哲学家吃饭时，需要先拿起自己左右两边的两根筷子，并且一次只能拿起一根筷子。</p>
+<p>为了防止死锁的发生，可以设置两个条件（临界资源）：</p>
+<ul>
+<li>必须同时拿起左右两根筷子；</li>
+<li>只有在两个邻居都没有进餐的情况下才允许进餐。</li>
+</ul>
+<h3 id="7">7. 进程通信<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>进程同步与进程通信的区别在于：</p>
+<ul>
+<li>进程同步：控制多个进程按一定顺序执行</li>
+<li>进程通信：进程间传输信息</li>
+</ul>
+<p>进程通信是一种手段，而进程同步是一种目的。也可以说，为了能够达到进程同步的目的，需要让进程进行通信，传输一些进程同步所需要的信息。</p>
+<p><strong>7.1 直接通信</strong></p>
+<p>发送进程直接把消息发送给接收进程，并将它挂在接收进程的消息缓冲队列上，接收进程从消息缓冲队列中取得消息。</p>
+<p><strong>7.2 间接通信 (管命共消信套)</strong></p>
+<p>间接通信方式是指进程之间的通信需要通过作为<strong>共享数据结构的实体</strong>。该实体用来暂存发送进程发给目标进程的消息。</p>
+<p>详细说明间接通信：</p>
+<p><strong>7.2.1 管道</strong></p>
+<div class="highlight"><pre><span></span><code>netstat -tulnp | grep 8080
+</code></pre></div>
+<p>含义: 其中" |”是管道的意思，它的作用就是把前一条命令 的输出作为后一条命令的输入，在这里就是把 netstat -tulnp 的输出结果作为 grep 8080 这条命令的输 入。</p>
+<p>如果两个进程要进行通信的话，就可以用这种管道来进行通信了，并且我们可以知道这条竖线是没有名字的，所以我们把这种通信方式称之为匿名管道。</p>
+<p><strong>匿名管道的特点:</strong></p>
+<ul>
+<li>并且这种通信方式是单向的，只能把第一个命令的输出作为第二个命令的输入</li>
+<li>如果进程之间想要 互相通信的话，那么需要创建两个管道。</li>
+</ul>
+<p><strong>命名管道:</strong> </p>
+<div class="highlight"><pre><span></span><code>mkfifo test
+</code></pre></div>
+<p>这条命令创建了了⼀一个名字为 test 的命名管道。</p>
+<p>用一个进程向这个管道里⾯写数据，然后有另外一个进程把里⾯的数据读出来</p>
+<div class="highlight"><pre><span></span><code>echo &quot;this is a pipe&quot; &gt; test // 写数据
+
+// 这个时候管道的内容没有被读出的话，那么这个命令就会一直停在这里，只有当另外一个进程把 test 里面的内容读
+// 出来的时候这条命令才会结束。接下来我们用另外一个进程来读取
+
+cat &lt; test // 读数据
+
+// test 里面的数据被读取出来了。上一 条命令也执行结束了。
+</code></pre></div>
+<p>从上面的例子可以看出，管道的通知机制类似于缓存，就像一个进程把数据放在某个缓存区域，然后等着另外一个进程去拿，并且是<strong>管道是单向传输的,</strong> 并且通信方式效率低下; </p>
+<p>不过管道通信比较简单，能够保证我们的数据已经真的被其他进程拿走了。</p>
+<p><strong>7.2.2 消息队列</strong></p>
+<p>那我们能不能<strong>把进程的数据放在某个内存之后就马上让进程返回</strong>呢?无需等待其他进程来取就返回呢? </p>
+<p>当然是可以的，我们可以用<strong>消息队列的通信模式</strong>来解决这个问题。</p>
+<p>例如 a 进程要给 b 进程发送消息， 只需要把消息放在对应的消息队列里就行了，b 进程需要的时候再去对应的消</p>
+<p>息队列里取出来。同理，b 进程要个 a 进程发送消息也是一样。这种通信方式类似于<strong>缓存</strong>吧。 </p>
+<p><strong>缺点:</strong></p>
+<ul>
+<li>如果 a 进程发送的数据占的内存比较大，并且两个进程之间的通 信特别频繁的话，消息队列模型就不大适合了。</li>
+<li>因为 a 发送的数据很大的话，<strong>意味发送消息(拷贝) 这个过程需要花很多时间来读内存。</strong> </li>
+</ul>
+<p><strong>7.2.3 共享内存</strong> </p>
+<p><strong>共享内存这个通信方式就可以很好着解决发送/拷贝消息所消耗的时间了。</strong> </p>
+<p>这个可能有人会问了，每个进程不是有自己的独立内存吗?两个进程怎么就可以共享一块内存了? </p>
+<p>我们都知道，系统加载一个进程的时候， 分配给进程的内存并不是<strong>实际物理内存</strong>，而是<strong>虚拟内存空间</strong>。那么我们</p>
+<p>可以让两个进程各自拿出一块虚拟地址空间来，然后映射到相同的物理内存中，这样， 两个进程虽然有着独立的</p>
+<p>虚拟内存空间，但有一部分却是映射到相同的物理内存，这就完成了内存 共享机制了。</p>
+<p><strong>7.2.4 信号量</strong> </p>
+<p>共享内存最大的问题是什么? </p>
+<p>就是<strong>多进程竞争内存</strong>的问题。就像类似于我们平时说的线程安全 问题。</p>
+<p>如何解决这个问题?</p>
+<p>这个时候我们的信号量就上场了。 </p>
+<p>信号量的本质就是一个计数器， 用来实现进程之间的互斥与同步。例如信号量的初始值是 1,然后 a 进程来访问内存 1 的时候，我们就把信号量的值设为 0,然后进程 b 也要来访问内存 1 的时候，看到 信号量的值为 0 就知道已经有进程在访问内存 1 了，这个时候进程 b 就会访问不了内存 1。所以说， 信号量也是进程之间的一种通信方式。</p>
+<p><strong>7.2.5 Socket</strong> </p>
+<p>上面我们说的共享内存、管道、信号量、消息队列，他们都是多个进程在一台主机之间的通信， 那 两个相隔几千里的进程能够进行通信吗? </p>
+<p>答是必须的，这个时候 Socket 这家伙就派上用场了，例如我们平时通过浏览器发起一个 http 请求, 然后服务器给你返回对应的数据，这种就是采用 Socket 的通信方式了。</p>
+<p>补充：<strong>线程间通信</strong>（了解）</p>
+<ul>
+<li>信号：类似进程间的信号处理                     </li>
+<li>锁机制：互斥锁、读写锁和自旋锁                 </li>
+<li>条件变量：使用通知的方式解锁，与互斥锁配合使用 </li>
+<li>信号量：包括无名线程信号量和命名线程信号量   </li>
+</ul>
+<h2 id="3_4">3. 死锁（重要）<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_5">1. 死锁的定义<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
+<p>​       死锁是指两个或两个以上的进程在执行过程中，因争夺资源而造成的一种互相等待的现象，若无 外力作用，它们都将无法推进下去。</p>
+<p>造成死锁的原因： （1）因为<strong>系统资源不足或分配不当</strong>等。（2）<strong>进程运行推进顺序不合适</strong>。如果系 统资源充足，进程的资源请求都能够得到满足，死锁出现的可能性就很低，否则就会因争夺有限的 资源而陷入死锁。其次，进程运行推进顺序与速度不同，也可能产生死锁。</p>
+<h3 id="2_5">2. 产生死锁的必要条件<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>（1）互斥条件：一个资源每次只能被一个进程使用。 </p>
+</li>
+<li>
+<p>（2）占有和等待条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。 </p>
+</li>
+<li>
+<p>（3） 不剥夺条件：进程已获得的资源，在末使用完之前，不能强行剥夺。 </p>
+</li>
+<li>
+<p>（4） 循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。 </p>
+</li>
+</ul>
+<p>比如： A，B，C 若干个进程，B 等待 A 释放资源，C 等待 B 释放资源，A 等待 C 释放资源。 </p>
+<p>​        </p>
+<p>​       这四个条件是死锁的必要条件，只要系统发生死锁，这些条件必然成立，而只要上述条件之 一不满足，就不会发生死锁。</p>
+<h3 id="3_5">3. 解决死锁的方法<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<p>解决死锁主要有四种方法：<strong>鸵鸟策略，死锁检测与恢复，死锁预防，死锁避免</strong>。</p>
+<p><strong>1. 鸵鸟策略</strong></p>
+<p>鸵鸟策略：把头埋在沙子里，假装根本没发生问题。 </p>
+<p>为什么用？因为解决死锁问题的代价很高，因此鸵鸟策略这种不采取任务措施的方案会获得更高的性能。</p>
+<p>什么时候用？当发生死锁时不会对用户造成多大影响，或发生死锁的概率很低，可以采用鸵鸟策略。 </p>
+<p>大多数操作系统，包括 Unix，Linux 和 Windows，处理死锁问题的办法仅仅是忽略它。</p>
+<p><strong>2. 死锁检测与恢复</strong></p>
+<p>不试图阻止死锁，而是当检测到死锁发生时，采取措施进行恢复。</p>
+<p><strong>2.1 死锁检测</strong></p>
+<p>（1）深度搜索-进程资源图</p>
+<p><img alt="A6IHw8.png (729×340) (ax1x.com)" src="https://s2.ax1x.com/2019/04/02/A6IHw8.png" /></p>
+<p>上图为资源分配图，其中<strong>方框表示资源，圆圈表示进程</strong>。资源指向进程表示该资源已经分配给该进程，进程指向资源表示进程请求获取该资源。</p>
+<p>图 a 可以抽取出环，如图 b，它满足了环路等待条件，因此会发生死锁。</p>
+<p>该<strong>死锁检测算法</strong>是 <strong>通过检测进程-资源有向图是否存在环来实现</strong>: </p>
+<p>​   从一个节点出发进行深度优先搜索，对访问过的节点进行标记，如果访问了已经标记的节点，就表示有向图存    在环，也就是检测到 死锁的发生。 </p>
+<p>进程-资源有向图描述了进程获得了哪些资源，以及资源被哪些进程获取。</p>
+<p>（2）标记法</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/625eb761239250f7c523374f.jpg" /></p>
+<p>上图中，有三个进程四个资源，每个数据代表的含义如下：  </p>
+<ul>
+<li>E 向量：资源总量 </li>
+<li>A 向量：资源剩余量 </li>
+<li>C 矩阵：每个进程所拥有的资源数量，每一行都代表一个进程拥有资源的数量 </li>
+<li>R 矩阵：每个进程请求的资源数量</li>
+</ul>
+<p><strong>算法过程:</strong></p>
+<p>每个进程最开始时都不被标记，执行过程有可能被标记。当算法结束时，任何没有被标记的进程都 是死锁进程。</p>
+<ol>
+<li>寻找一个<strong>没有标记的进程 Pi</strong>，它所请求的资源小于等于 A。 </li>
+<li>如果找到了这样一个进程，那么将 C 矩阵的第 i 行向量加到 A 中，标记该进程，并转回 1。 </li>
+<li>如果没有这样一个进程，算法终止。</li>
+</ol>
+<p><strong>总结：</strong>标记法，标记不会出现死锁的进程。给每一个进程尝试分配其所请求的资源，如果能成功分 配，那么对该</p>
+<p>进程进行标记，并且往资源池里边加入该进程所拥有的资源数量，直到遍历完所有进 程，还没被标记的进程就陷</p>
+<p>入了死锁。</p>
+<p><strong>2.2 死锁恢复</strong></p>
+<p><strong>资源剥夺法</strong>：剥夺陷于死锁的进程所占用的资源，但并不撤销此进程，直至死锁解除。 </p>
+<p><strong>进程回滚法</strong>：根据系统保存的检查点让所有的进程回退，直到足以解除死锁，这种措施要求系统建 立保存检查点、回退及重启机制。 </p>
+<p><strong>系统重启法：</strong>结束所有进程的执行并重新启动操作系统。这种方法很简单，但先前的工作全部作废，损失很大。</p>
+<p><strong>3. 死锁预防</strong></p>
+<p><strong>3.1 破坏互斥条件</strong></p>
+<p>如果把只能互斥使用的资源改造为允许共享使用，则系统不会进入死锁状态。</p>
+<p>缺点：** 并不是所有的资源都可以改造成可共享使用的资源，并且为了系统安全，很多地方还必须保护这种 互斥性，因此，很多时候都无法破坏互斥条件</p>
+<p><strong>3.2 破坏占有和条件</strong> </p>
+<p>进程在运行前，一次申请完它所需要的全部资源。</p>
+<p><strong>缺点：</strong> 有些资源可能只需要用很短的时间，因此如果进程的整个运行期间都一致保持着所有资源，就会造 成严重的资源浪费，资源利用率极低。 另外，该策略也有可能导致某些进程饥饿。</p>
+<p><strong>3.3 破坏不可剥夺条件</strong></p>
+<p>方案一: </p>
+<p>​       <strong>当某个进程请求新的资源得不到满足时，它必须立即释放所保持的所有资源</strong>，从而破坏了不可剥夺 条件。</p>
+<p>方案二: </p>
+<p>​       当某个进程需要的资源被其他进程所占有的时候，<strong>可由操作系统协助，将想要的资源强行剥夺</strong>， 这种方式一般需要考虑各进程的优先级，比如剥夺调度方式，就是将处理机资源强行剥夺给优先级 更高的进程使用。</p>
+<p><strong>缺点:</strong></p>
+<p>方案一：释放已获得的资源可能造成前一阶段你工作的失效。</p>
+<p>方案二：抢夺别的进程的资源，相当于将别的经常所获得的资源释放，可能会造成别的进程的前一 阶段的工作失效。</p>
+<p><strong>3.3 破坏循环等待条件</strong></p>
+<p><strong>给资源编号，规定每个进程必须按编号递增的顺序请求资源。</strong></p>
+<p><strong>原理分析</strong>： 一个进程只有已占有小编号的资源时，才有资格申请更大编号的资源。按此规则，已持有大编号资 源</p>
+<p>的进程不能申请小编号的资源，从而就不会产生循环等待的现象。 </p>
+<p>比如：进程 A 已占有资源 1,3，进程 B 占有资源 2，进程 B 请求资源 3，进程 A 不能请求占有资源 2， 所以不会出现循环等待现象。并且进程 A 还要先获得资源 1。</p>
+<p><strong>缺点</strong>： 不方便增加新的设备，因为可能需要重新分配所有的编号。 进程实际使用资源的顺序可能和编号递增顺序不一致，会导致资源浪费。 必须按规定次序申请资源，用户编程麻烦。</p>
+<p><strong>4. 死锁避免</strong></p>
+<p>在程序运行时避免发生死锁。</p>
+<p><strong>安全状态:</strong></p>
+<p>定义：当前状态如果没有发生死锁，并且即使所有进程请求对资源的最大需求，也仍然存在某种调度次序能够使得每一个进程运行完毕，则称该状态是安全的。</p>
+<blockquote>
+<p>安全状态的检测与死锁的检测类似，因为安全状态必须要求不能发生死锁。下面的银行家算法与死 锁检测算法非常类似，可以结合着做参考对比。
+</p>
+</blockquote>
+<p>只要一直是安全状态就能避免死锁</p>
+<p><strong>4. 银行家算法</strong></p>
+<p>银行家算法会尝试向一个进程分配资源，然后判断分配资源后的状态是否安全，如果安全那么就会 给这个进程分配请求的资源，否则拒绝请求。</p>
+<p><strong>案例:</strong></p>
+<p><img alt="" src="https://pic.imgdb.cn/item/625ebbc1239250f7c52cf2b0.jpg" /></p>
+<p>上图中有五个进程，四个资源。左边的图表示已经分配的资源，右边的图表示还需要分配的资源。 最右边的 E、P 以及 A 分别表示：总资源、已分配资源以及可用资源，注意这三个为向量，而不 是具体数值，例如 A=(1020)，表示 4 个资源分别还剩下 1/0/2/0</p>
+<p><strong>检查一个状态是否安全的算法如下：</strong> </p>
+<ul>
+<li>查找右边的矩阵是否存在一行小于等于向量 A。如果不存在这样的行，那么系统将会发生死 锁， 状态是不安全的。 </li>
+<li>假若找到这样一行，将该进程标记为终止，并将其已分配资源加到 A 中。</li>
+<li>重复以上两步，直到所有进程都标记为终止，则状态时安全的。</li>
+</ul>
+<p><strong>总结：</strong> <strong>银行家算法预先给进程分配资源，然后判断当前是否处于安全状态，如果是，那么对这个进程的资源分配有效，否则无效</strong>。</p>
+<p><strong>怎么判断是否处于安全状态呢？</strong>查看资源池所剩资源是否能满足 所有进程中所需资源最小的进程的需求，如果能满足，那么释放该进程的资源，放入进程里边。然 后再继续判断下一个所需资源最小的进程，知道遍历完所有进程，如果能满足所有进程的资源请求， 那么证明当前状态是处于安全状态。</p>
+<h2 id="4_2">4. 内存管理<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 虚拟内存（了解）<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>​       虚拟内存的目的是为了让<strong>物理内存</strong>扩充成更大的<strong>逻辑内存</strong>，从而让程序获得更多的可用内存。 </p>
+<p>​       为了更好的管理内存，操作系统<strong>将内存抽象成地址空间</strong>。每个程序拥有自己的地址空间，这个地址空间被分割成多个块<strong>，每一块称为一页</strong>。<strong>这些页被映射到物理内存，但不需要映射到连续的物理内存，也不需要所有页都必须在物理内存中</strong>。当程序引用到不在物理内存中的页时，由硬件执行必要的映射，将缺失的部分装入物理内存并重新执行失败的指令。 </p>
+<p>​       从上面的描述中可以看出，<strong>虚拟内存允许程序不用将虚拟地址空间（即程序所需地址空间大小）中 的每一页都映射到物理内存</strong>，也就是说不需要将一个程序全部调入内存就可以运行，这使得有限的 内存运行大程序成为可能。</p>
+<p>​       例如有一台计算机可以产生 16 位地址，那么一个程序的地址空间范围 是 0~64K。该计算机只有 32KB 的物理内存，虚拟内存技术允许该计算机运行一个 64K 大小的程序。</p>
+<h3 id="42">4.2 分页系统地址映射<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p><strong>内存管理单元</strong>（MMU）管理着<strong>地址空间和物理内存</strong>的转换，其中的<strong>页表（Page table）</strong>存储着<strong>页（程序地址空间）</strong>和<strong>页框（物理内存空间）</strong>的映射表。</p>
+<p>一个虚拟地址分成两个部分，一部分存储<strong>页面号</strong>，一部分存储<strong>偏移量</strong>。</p>
+<p><strong>案例:</strong></p>
+<p>下图的页表存放着 16 个页，这 16 个页需要用 4 个比特位来进行索引定位。例如对于<strong>虚拟地址（0010000000000100）</strong>，前 4 位是存储<strong>页面号 2</strong>，读取表项内容为（110 1），页表项最后一位表示是否存在于内存中，1 表示存在。<strong>后 12 位存储偏移量</strong>。这个页对应的页框的地址为 （110 000000000100）。</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/625f625c239250f7c50ae941.jpg" /></p>
+<h3 id="43">4.3 页面置换算法（重点）<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<p>在程序运行过程中，如果要访问的页面不在内存中，就发生缺页中断从而将该页调入内存中。此时<strong>如果内存已无空</strong></p>
+<p><strong>闲空间，系统必须从内存中调出一个页面到磁盘对换区中来腾出空间。</strong> </p>
+<p>页面置换算法和缓存淘汰策略类似，可以将内存看成磁盘的缓存。在缓存系统中，缓存的大小有限， 当有新的缓存到达时，需要淘汰一部分已经存在的缓存，这样才有空间存放新的缓存数据。 </p>
+<p>页面置换算法的主要目标是<strong>使页面置换频率最低（也可以说缺页率最低）</strong></p>
+<p><strong>1. 最佳替换（OPT, Optimal replacement algorithm）</strong></p>
+<p><strong>所选择的被换出的页面是未来最长时间内不再被访问的页面，</strong>通常可以保证获得最低的缺页率。 </p>
+<p>是一种<strong>理论上的算法</strong>，因为无法知道一个页面多长时间不再被访问。</p>
+<p><strong>案例：</strong></p>
+<p>一个系统为某进程分配了三个物理块，并有如下页面引用序列：</p>
+<div class="highlight"><pre><span></span><code>7  0  1  2  0  3  0  4  2  3  0  9  2  1  2  0  1  7  0  1
+</code></pre></div>
+<p>开始运行时，先将 7, 0, 1 三个页面装入内存。当进程要访问页面 2 时，产生缺页中断，会将页面 7 换出，因为<strong>页面 7 再次被访问的时间最长</strong>。</p>
+<p><strong>2. 最近最久未使用（LRU，Least Recently Used）</strong></p>
+<p>虽然无法知道将来要使用的页面情况，但是可以知道过去使用页面的情况。LRU 将<strong>最近最久未使用 的页面换出</strong>。 </p>
+<p>为了实现 LRU，需要在内存中维护一个所有页面的<strong>链表</strong>。当一个页面被访问时，将这个页面移到链表表头。<strong>这样就能保证链表表尾的页面是最近最久未访问的</strong>。 </p>
+<p>因为每次访问都需要更新链表，因此这种方式实现的 LRU 代价很高。</p>
+<p><strong>案例：</strong></p>
+<div class="highlight"><pre><span></span><code>4  7  0  7  1  0  1  2  1  2  6
+</code></pre></div>
+<p><img alt="" src="https://pic.imgdb.cn/item/625f69ee239250f7c515ad27.jpg" /></p>
+<p><strong>3. 最近未使用（NRU，Not Recently Used）</strong></p>
+<p>每个页面都有两个状态位：R 与 M，当页面<strong>被访问时设置页面的 R=1</strong>，当页面<strong>被修改时设置 M=1</strong>。 其中 R 位会定时被清零。可以将页面分成以下四类：</p>
+<ul>
+<li>R=0，M=0 </li>
+<li>R=0，M=1 </li>
+<li>R=1，M=0 </li>
+<li>R=1，M=1</li>
+</ul>
+<p>当发生缺页中断时，NRU 算法<strong>随机地</strong>从<strong>类编号最小的非空类中</strong>挑选一个页面将它换出。 </p>
+<p>这个算法隐含的意思是: <strong>淘汰</strong>一个在最近一个时钟周期内<strong>没有被访问过的已修改页</strong>要比淘汰一个被频繁访问的干净的页好。 </p>
+<p><strong>NRU 优先换出已经被修改的脏页面（R=0，M=1），而不是被频繁使用的干净页面（R=1，M=0）。</strong></p>
+<p><strong>3. 先进先出（FIFO，First In First Out）</strong></p>
+<p>选择置换换出的页面是最先进入的页面。 </p>
+<p>该算法会将那些经常被访问的页面也被换出，从而使缺页率升高。</p>
+<p><strong>4. 第二次机会算法</strong></p>
+<p>FIFO 算法可能会把经常使用的页面置换出去，为了避免这一问题，对该算法做一个简单的修改：</p>
+<p>当页面<strong>被访问</strong> (读或写) 时设置该页面的 <strong>R 位为 1</strong>。当内存不足，需要页面替换的时候，检查链表中最老页面的 R 位。<strong>如果 R 位是 0</strong>，那么这个页面既老又没有被使用，可以<strong>立刻置换掉</strong>；如果<strong>是 1，就将 R 位清 0</strong>，并把该页面放到链表的尾端，修改它的装入时间使它就像刚装入的一样，然后 继续<strong>从链表的头部</strong>开始搜索。</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/625f6bb6239250f7c51826e1.jpg" /></p>
+<p><strong>5. 时钟算法</strong></p>
+<p>第二次机会算法需要在链表中移动页面，降低了效率。时钟算法使用<strong>环形链表</strong>将页面连接起来，<strong>再使用一个指针</strong>指向最老的页面。</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/625f6bd6239250f7c5184d8d.jpg" /></p>
+<p>当内存不足需要页面置换时，检查指针指向的页面： </p>
+<ul>
+<li>R=0，则直接替换 </li>
+<li>R=1，将 R 设置为 0，并将指针前进。</li>
+</ul>
+<h3 id="44">4.4 分段（了解）<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
+<p>虚拟内存采用的是分页技术，也就是将地址空间划分成固定大小的页，每一页再与物理内存进行映 射。</p>
+<p>但是如果一个编译器在编译过程中建立的多个表，有 4 个表是动态增长的，如果使用分页系统的一维地址空间，动态增长的特点会导致覆盖问题的出现。</p>
+<p>分段的做法是把每个表分成段，一个段构成一个独立的地址空间。每个段的长度可以不同，并且可以动态增长。</p>
+<h3 id="45">4.5 段页式<a class="headerlink" href="#45" title="Permanent link">&para;</a></h3>
+<p>程序的<strong>地址空间</strong>划分成多个<strong>拥有独立地址空间的段</strong>，<strong>每个段上的地址空间划分成大小相同的页</strong>。这 样既拥有分段系统的共享和保护，又拥有分页系统的虚拟内存功能。</p>
+<h3 id="46">4.6 分页和分段的比较<a class="headerlink" href="#46" title="Permanent link">&para;</a></h3>
+<p>共同点：两者都采用离散分配方式，且都地址映射机构来实现地址的转换  </p>
+<p>不同点：</p>
+<ol>
+<li>页是信息的物理单位采用分页存储管理方式是为了实现离散分配方法。提高内存的利用率，采用分段目的主要在于能更好的满足用户的需求</li>
+<li>页的大小固定且有系统决定，在采用分页存储管理方式中直接由硬件实现。而段的大小不固定，决定于用户所编写的程序</li>
+<li>分页的地址空间是一维的，分页完全是系统完全是行为，分段系统中是二维的。</li>
+</ol>
+<h3 id="47">4.7 快表（掌握）<a class="headerlink" href="#47" title="Permanent link">&para;</a></h3>
+<p>为了解决虚拟地址到物理地址的<strong>转换速度</strong>，操作系统在页表方案基础之上引入了 快表 来加速虚拟地址到物理地址</p>
+<p>的转换。</p>
+<p>我们可以把快表理解为一种特殊的高速缓冲存储器 （Cache），其中的内容是页表的一部分或者全部内容，它的</p>
+<p>作用与页表相似，但是提高了访问速率。</p>
+<p>由于采用页表做地址转换，读写内存数据时 CPU 要访问两次主存。有了快表，有时只要访问一次高速缓冲存储器，一次主存，这样可加速查找并提高指令执行速度。</p>
+<p>使用快表之后的地址转换流程：</p>
+<ol>
+<li>根据虚拟地址中的页号查快表； </li>
+<li>如果该页在快表中，直接从快表中读取相应的物理地址； </li>
+<li>
+<p>如果该页不在快表中，就访问内存中的页表，再从页表中得到物理地址，同时将页表中的该映射表项添加到快表中；</p>
+</li>
+<li>
+<p>当快表填满后，又要登记新页时，就按照一定的淘汰策略淘汰掉快表中的一个页。</p>
+</li>
+</ol>
+<h2 id="5_1">5. 磁盘管理<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 磁盘结构<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<ul>
+<li>盘面（Platter）：一个磁盘有多个盘面； </li>
+<li>磁道（Track）：盘面上的<strong>圆形带状区域</strong>，一个盘面可以有多个磁道； </li>
+<li>扇区（Track Sector）：<strong>磁道上的一个弧段</strong>，一个磁道可以有多个扇区，它是最小的物理储存单位， 目前主要有 512 bytes 与 4 K 两种大小； </li>
+<li>磁头（Head）：与盘面非常接近，能够将盘面上的磁场转换为电信号（读），或者将电信号转换 为盘面的磁场（写）； </li>
+<li>制动手臂（Actuator arm）：用于在磁道之间移动磁头； </li>
+<li>主轴（Spindle）：使整个盘面转动。</li>
+</ul>
+<p><img alt="" src="https://pic.imgdb.cn/item/625f7177239250f7c520fc96.jpg" /></p>
+<h3 id="42_1">4.2 磁盘调度算法（重点）<a class="headerlink" href="#42_1" title="Permanent link">&para;</a></h3>
+<p>读写一个磁盘块（由扇区组成）的时间的影响因素有：</p>
+<ul>
+<li>寻道时间（<strong>制动手臂移动，使得磁头移动到适当的磁道上</strong>） </li>
+<li>旋转时间（<strong>主轴转动盘面，使得磁头移动到适当的扇区上</strong>） </li>
+<li>实际的数据传输时间</li>
+</ul>
+<p>其中，寻道时间最长，因此<strong>磁盘调度的主要目标是使磁盘的平均寻道时间最短</strong>。</p>
+<p><strong>1. 先来先服务（FCFS， First Come First Served）</strong></p>
+<p><strong>按照磁盘请求的顺序进行调度。</strong> </p>
+<p>优点：公平和简单。 </p>
+<p>缺点：因为未对寻道做任何优化，使平均寻道时间可能较长。</p>
+<p><strong>2. 最短寻道时间优先算法（SSTF， Shortest Seek Time First）</strong></p>
+<p>优先调度与当前磁头所在磁道距离最近的磁道。</p>
+<p>优点：平均寻道时间比较低。 </p>
+<p>缺点：但是不够公平。</p>
+<p>如果<strong>新到达的磁道请求</strong>总是比一个在等待的磁道请求近，那么在等待的磁道请求会一直等待下去， 也就是出现饥饿现象。具体来说，两端的磁道请求更容易出现<strong>饥饿现象</strong>。</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/625f7318239250f7c523a99e.png" /></p>
+<p><strong>3. 电梯算法（SCAN）</strong></p>
+<p>电梯总是保持一个方向运行，<strong>直到该方向没有请求为止，然后改变运行方向</strong>。</p>
+<p>电梯算法（扫描算法）和电梯的运行过程类似，<strong>总是按一个方向来进行磁盘调度，直到该方向上没 有未完成的磁盘请求，然后改变方向</strong>。</p>
+<p>因为考虑了移动方向，因此所有的磁盘请求都会被满足，解决了 SSTF 的饥饿问题。</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/625f732e239250f7c523d088.png" /></p>
+<h3 id="43_1">4.3 链接<a class="headerlink" href="#43_1" title="Permanent link">&para;</a></h3>
+<p>以下是一个 <code>hello.c</code> 程序：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello, world</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>在 Unix 系统上，由编译器把源文件转换为目标文件:</p>
+<div class="highlight"><pre><span></span><code>gcc<span class="w"> </span>-o<span class="w"> </span>hello<span class="w"> </span>hello.c
+</code></pre></div>
+<p>这个过程大致如下：</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/625f741a239250f7c52580d4.jpg" /></p>
+<ul>
+<li>预处理阶段：处理以 # 开头的预处理命令；</li>
+<li>编译阶段：翻译成汇编文件；</li>
+<li>汇编阶段：将<strong>汇编文件</strong>翻译成<strong>可重定位目标文件</strong>；</li>
+<li>链接阶段：将<strong>可重定位目标文</strong>件和 <strong>printf.o 等单独预编译好的目标文件</strong>进行合并，得到最终的可执行目标文件。</li>
+</ul>
+<p><strong>1. 静态链接</strong></p>
+<p>静态链接器以一组<strong>可重定位目标文件为输入</strong>，生成一个<strong>完全链接的可执行目标文件作为输出</strong>。链接器主要完成以下两个任务：</p>
+<ul>
+<li><strong>符号解析</strong>：每个符号对应于一个函数、一个全局变量或一个静态变量，符号解析的目的是<strong>将每个符号引用与一个符号定义关联起来</strong>。 </li>
+<li><strong>重定位</strong>：链接器通过<strong>把每个符号定义与一个内存位置关联起来</strong>，然后修改所有对这些符号的 引用，使得它们指向这个内存位置。</li>
+</ul>
+<p><img alt="" src="https://pic.imgdb.cn/item/625f7548239250f7c527be44.jpg" /></p>
+<p>补充：</p>
+<p><strong>目标文件:</strong></p>
+<ul>
+<li>可执行目标文件：可以直接在内存中执行； </li>
+<li>可重定位目标文件：可与其它可重定位目标文件在链接阶段合并，创建一个可执行目标文件； </li>
+<li>共享目标文件：这是一种特殊的可重定位目标文件，可以在运行时被动态加载进内存并链接；</li>
+</ul>
+<p><strong>2. 动态链接</strong></p>
+<p>静态库有以下两个问题： </p>
+<ul>
+<li>当静态库更新时那么整个程序都要重新进行链接； </li>
+<li>对于 printf 这种标准函数库，如果每个程序都要有代码，这会极大浪费资源。</li>
+</ul>
+<p><strong>共享库</strong>是为了解决静态库的这两个问题而设计的，在 Linux 系统中通常用<code>.so</code> 后缀来表示，Windows 系统上它们被称为 <code>DLL</code>。它具有以下特点：</p>
+<ul>
+<li>在给定的文件系统中一个库只有一个文件，所有引用该库的可执行目标文件都共享这个文件，<strong>它不会被复制到引用它的可执行文件中</strong>； </li>
+<li>在内存中，一个共享库的 <code>.text</code> 节（已编译程序的机器代码）的一个副本可以被不同的正在运行的进程共享。</li>
+</ul>
+<p><img alt="" src="https://pic.imgdb.cn/item/625f770a239250f7c52acd0a.jpg" /></p>
+<h2 id="6_1">6. 常见问题<a class="headerlink" href="#6_1" title="Permanent link">&para;</a></h2>
+<h3 id="_1">系统相关:<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><strong>1. 操作系统为什么有用户态和内核态，用户级线程与内核级线程如何转换？</strong></p>
+<p>（1）操作系统为什么有用户态和内核态： </p>
+<p>​       在计算机系统中，通常运行着两类程序：系统程序和应用程序，为了保证系统程序不被应用程序有 意或无意地破坏，为计算机设置了两种状态：</p>
+<ul>
+<li>内核态，操作系统程序在内核态运行 </li>
+<li>用户态，应用程序只能在用户态运行</li>
+</ul>
+<p>（2）用户态和内核态如何相互转换：</p>
+<ul>
+<li>
+<p>用户态切换到内核态的途径——&gt;中断/异常/陷入（系统调用） </p>
+</li>
+<li>
+<p>内核态切换到用户态的途径——&gt;设置程序状态字</p>
+</li>
+</ul>
+<p><strong>2. 操作系统的内核态包括的哪些内容？</strong></p>
+<ol>
+<li>时钟管理：向用户提供标准的系统时间，另外通过时钟中断的管理，可以实现进程的切换。 例如时间片轮转算法。 </li>
+<li>原语：处于操作系统最底层，是最接近硬件的部分、这些程序的运行具有原子性，其操作只 能一气呵成（</li>
+<li>中断机制</li>
+<li>系统控制的数据结构以及处理：进程控制块。</li>
+</ol>
+<p><strong>3. 异常和中断的区别</strong></p>
+<p><strong>中断：</strong>中断是由硬件设备产生的，而它们从物理上说就是电信号，之后，它们通过中断控制器发送给CPU，接着CPU判断收到的中断来自于哪个硬件设备（这定义在内核中），最后，由CPU发送给内核，有内核处理中断。</p>
+<p><strong>异常：</strong>异常是由CPU产生的，同时，它会发送给内核，要求内核处理这些异常；比如CPU处理程序的时候一旦程序不在内存中，会产生缺页异常；当运行除法程序时，当除数为0时，又会产生除0异常。</p>
+<p><strong>相同点</strong></p>
+<ul>
+<li>最后都是由CPU发送给内核，由内核去处理</li>
+<li>处理程序的流程设计上是相似的</li>
+</ul>
+<p><strong>不同点</strong></p>
+<ul>
+<li>产生源不相同，异常是由CPU产生的，而中断是由硬件设备产生的</li>
+<li>内核需要根据是异常还是中断调用不同的处理程序</li>
+<li>中断不是时钟同步的，这意味着中断可能随时到来；异常由于是CPU产生的，所以它是时钟同步的</li>
+<li>当处理中断时，处于中断上下文中；处理异常时，处于进程上下文中</li>
+</ul>
+<p><strong>3.2 外中断和异常有什么区别？</strong>
+外中断是指由 CPU 执行指令以外的事件引起，如 I/O 完成中断，表示设备输入/输出处理已经完成，处理器能够发送下一个输入/输出请求。此外还有时钟中断、控制台中断等。</p>
+<p>而异常时由 CPU 执行指令的内部事件引起，如非法操作码、地址越界、算术溢出等。</p>
+<p><strong>4. 请介绍局部性原理，主要有哪两大局部性原理？各自是什么？</strong></p>
+<p>主要分为<strong>时间局部性和空间局部性</strong>。</p>
+<ul>
+<li>时间局部性:如果执行了程序中的某条指令，那么不久后这条指令很有可能再次执行;如果某个数据被访问过，</li>
+<li>不久之后该数据很可能再次被访问。(因为程序中存在大量的循环) </li>
+<li>空间局部性:一旦程序访问了某个存储单元，在不久之后，其附近的存储单元也很有可能被访问。(因为很多数</li>
+<li>据在内存中都是连续存放的，并且程序的指令也是顺序地在内存中存放的)</li>
+</ul>
+<p><strong>5. 系统并发和并行，分得清吗？</strong></p>
+<p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。</p>
+<p>并行需要硬件支持，如多流水线、多核处理器或者分布式计算系统。</p>
+<p>操作系统通过引入进程和线程，使得程序能够并发运行。</p>
+<p><strong>6. 共享是什么？</strong>
+共享是指系统中的资源可以被多个并发进程共同使用。</p>
+<p>有两种共享方式：互斥共享和同时共享。</p>
+<p>互斥共享的资源称为临界资源，例如打印机等，在同一时刻只允许一个进程访问，需要用同步机制来实现互斥访问。</p>
+<p><strong>7. 同步、异步、阻塞、非阻塞（金典题）</strong></p>
+<p><strong>同步与异步</strong>
+同步和异步关注的是<strong>消息通信机制</strong> (synchronous communication/ asynchronous communication)
+所谓同步，就是在发出一个<strong>调用</strong>时，在没有得到结果之前，该<strong>调用</strong>就不返回。但是一旦调用返回，就得到返回值了。
+换句话说，就是由<strong>调用者</strong>主动等待这个<em>调用</em>的结果。</p>
+<p>而异步则是相反，<strong>调用</strong>在发出之后，这个调用就直接返回了，所以没有返回结果。换句话说，当一个异步过程调用发出后，调用者不会立刻得到结果。而是在<em>调用</em>发出后，<strong>被调用者</strong>通过状态、通知来通知调用者，或通过回调函数处理这个调用。</p>
+<p><strong>阻塞与非阻塞</strong>
+阻塞和非阻塞关注的是<strong>程序在等待调用结果（消息，返回值）时的状态.</strong></p>
+<p>阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。
+非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程。</p>
+<h3 id="_2">进程相关:<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><strong>1. 一个进程可以创建多少线程，和什么有关？</strong></p>
+<p>理论上，一个进程可用虚拟空间是2G，默认情况下，线程的栈的大小是1MB，所以理论上最多只能创建2048个线程。如果要创建多于2048的话，必须修改编译器的设置。</p>
+<p>因此，一个进程可以创建的线程数由可用虚拟空间和线程的栈的大小共同决定，只要虚拟空间足够，那么新线程的建立就会成功。如果需要创建超过2K以上的线程，减小你线程栈的大小就可以实现了。但是过多的线程将会导致大量的时间浪费在线程切换上，给程序运行效率带来负面影响。</p>
+<p><strong>2. 介绍几种常见的锁（线程锁）</strong></p>
+<p>（1）读写锁</p>
+<ul>
+<li>多个读者可以同时进行读</li>
+<li>写者必须互斥（只允许一个写者写，也不能读者写者同时进行）</li>
+<li>写者优先于读者（一旦有写者，则后续读者必须等待，唤醒时优先考虑写者）</li>
+</ul>
+<p>（2）互斥锁：一次只能一个线程拥有互斥锁，其他线程只有等待</p>
+<p>​       互斥锁是在抢锁失败的情况下主动放弃CPU进入睡眠状态直到锁的状态改变时再唤醒，而操作系统负责线程调度，为了实现锁的状态发生改变时唤醒阻塞的线程或者进程，需要把锁交给操作系统管理，所以互斥锁在加锁操作时涉及上下文的切换。互斥锁实际的效率还是可以让人接受的，加锁的时间大概100ns左右，而实际上互斥锁的一种可能的实现是先自旋一段时间，当自旋的时间超过阀值之后再将线程投入睡眠中，因此在并发运算中使用互斥锁（每次占用锁的时间很短）的效果可能不亚于使用自旋锁。</p>
+<p>（3）条件变量
+        互斥锁一个明显的缺点是他只有两种状态：锁定和非锁定。</p>
+<p>​       而条件变量通过允许线程阻塞和等待另一个线程发送信号的方法弥补了互斥锁的不足，他常和互斥锁一起使用，以免出现竞态条件。当条件不满足时，线程往往解开相应的互斥锁并阻塞线程然后等待条件发生变化。一旦其他的某个线程改变了条件变量，他将通知相应的条件变量唤醒一个或多个正被此条件变量阻塞的线程。总的来说互斥锁是线程间互斥的机制，条件变量则是同步机制。</p>
+<p>（4）自旋锁
+        如果进线程无法取得锁，进线程不会立刻放弃CPU时间片，而是一直循环尝试获取锁，直到获取为止。如果别的线程长时期占有锁，那么自旋就是在浪费CPU做无用功，但是自旋锁一般应用于加锁时间很短的场景，这个时候效率比较高。</p>
+<p><strong>3. 怎么回收线程？有哪几种方法？</strong></p>
+<p>（1）等待线程结束：int pthread_join(pthread_t tid, void** retval);</p>
+<p>（2）主线程调用，等待子线程退出并回收其资源，类似于进程中wait/waitpid回收僵尸进程。</p>
+<p>（3）结束线程：pthread_exit(void *retval);</p>
+<p>​           子线程执行，用来结束当前线程并通过retval传递返回值，该返回值可通过pthread_join获得。</p>
+<p>（4）分离线程：int pthread_detach(pthread_t tid);</p>
+<p>​       主线程、子线程均可调用。主线程中pthread_detach(tid)，子线程中pthread_detach(pthread_self())，调用后和主线程分离，子线程结束时自己立即回收资源。</p>
+<p><strong>4. 进程终止的几种方式</strong></p>
+<ol>
+<li>main函数的自然返回，<code>return</code> </li>
+<li>调用<code>exit</code>函数，属于c的函数库 </li>
+<li>调用<code>_exit</code>函数，属于系统调用 </li>
+<li>调用<code>abort</code>函数，异常程序终止，同时发送SIGABRT信号给调用进程。 </li>
+<li>接受能导致进程终止的信号：ctrl+c (^C)、SIGINT(SIGINT中断进程)</li>
+</ol>
+<p><strong>5. 多进程和多线程的区别是什么？换句话说，什么时候该用多线程，什么时候该用多进程？</strong></p>
+<ul>
+<li>频繁修改：需要频繁创建和销毁的优先<strong>使用多线程</strong></li>
+<li>计算量：需要大量计算的优先使用多线程 因为需要消耗大量CPU资源且切换频繁，所以<strong>多线程好一点</strong></li>
+<li>相关性：任务间相关性比较强的用多线程，相关性比较弱的用多进程。因为线程之间的数据共享和同步比较简单。</li>
+<li>多分布：可能要扩展到多机分布的用多进程，多核分布的用多线程。</li>
+<li>但是实际中更常见的是进程加线程的结合方式，并不是非此即彼的。</li>
+</ul>
+<h3 id="_3">内存相关:<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><strong>1. 内存交换和覆盖有什么区别？</strong>
+交换技术主要是在不同进程（或作业）之间进行，而覆盖则用于同一程序或进程中。</p>
+<p><strong>内存的覆盖是什么？有什么特点？</strong>
+        由于程序运行时并非任何时候都要访问程序及数据的各个部分（尤其是大程序），因此可以把用户空间分成</p>
+<p>为一个固定区和若干个覆盖区。将经常活跃的部分放在固定区，其余部分按照调用关系分段，首先将那些即将要访</p>
+<p>问的段放入覆盖区，其他段放在外存中，在需要调用前，系统将其调入覆盖区，替换覆盖区中原有的段。</p>
+<p>​       <strong>覆盖技术的特点</strong>：是打破了必须将一个进程的全部信息装入内存后才能运行的限制，但当同时运行程序的代</p>
+<p>码量大于主存时仍不能运行，再而，大家要注意到，内存中能够更新的地方只有覆盖区的段，不在覆盖区的段会常</p>
+<p>驻内存。</p>
+<p><strong>内存交换是什么？有什么特点？</strong>
+        交换(对换)技术的设计思想：内存空间紧张时，系统将内存中某些进程暂时换出外存，把外存中某些已具备运行条件的进程换入内存(进程在内存与磁盘间动态调度)。</p>
+<p>​       换入：把准备好竞争CPU运行的程序从辅存移到内存。 </p>
+<p>​       换出：把处于等待状态（或CPU调度原则下被剥夺运行权力）的程序从内存移到辅存，把内存空间腾出来。</p>
+<p><strong>什么时候会进行内存的交换？</strong>
+        内存交换通常在许多进程运行且内存吃紧时进行，而系统负荷降低就暂停。例如:在发现许多进程运行时经常</p>
+<p>发生缺页，就说明内存紧张，此时可以换出一些进程;如果缺页率明显下降，就可以暂停换出。</p>
+<p><strong>2. 动态分区分配算法有哪几种？可以分别说说吗？</strong>（了解）</p>
+<p>（1）首次适应算法
+算法思想：<strong>每次都从低地址开始查找</strong>，找到第一个能满足大小的空闲分区。</p>
+<p>如何实现：空闲分区以地址递增的次序排列。每次分配内存时顺序查找空闲分区链( 或空闲分[表)，找到大小能满足要求的第一个空闲分区。</p>
+<p>（2）最佳适应算法
+算法思想:由于动态分区分配是一种连续分配方式，为各进程分配的空间必须是连续的一整片区域。因此为了保证当“大进程”到来时能有连续的大片空间，可以尽可能多地留下大片的空闲区, <strong>优先使用更小的空闲区</strong>。</p>
+<p>如何实现:空闲分区按容量递增次序链接，每次分配内存时顺序查找空闲分区链(或空闲分区表)，找到大小能满足要求的第一个空闲分区。</p>
+<p>（3）最坏适应算法
+又称最大适应算法(Largest Fit)</p>
+<p>算法思想:为了解决最佳适应算法的问题-即留下太多难以利用的小碎片，可以在<strong>每次分配时优先使用最大的连续空闲区</strong>，这样分配后剩余的空闲区就不会太小，更方便使用。</p>
+<p>如何实现:空闲分区按容量递减次序链接。每次分配内存时顺序查找空闲分区链(或空闲分区表)，找到大小能满足要求的第一个空闲分区。 </p>
+<p>（4）邻近适应算法</p>
+<p>首次适应算法每次都从链头开始查找的。这可能会导致低地址部分出现很多小的空闲分区，而每次分配查找时，都要经过这些分区，因此也增加了查找的开销。<strong>如果每次都从上次查找结束的位置开始检索</strong>，就能解决上述问题。</p>
+<p>如何实现：空闲分区以地址递增的顺序排列(可排成-一个循环链表)。每次分配内存时从上次查找结束的位置开始查找空闲分区链(或空闲分区表)，找到大小能满足要求的第一个空闲分区。</p>
+<p>（5）总结
+首次适应不仅最简单，通常也是最好最快，不过首次适应算法会使得内存低地址部分出现很多小的空闲分区，而每次查找都要经过这些分区，因此也增加了查找的开销。邻近算法试图解决这个问题，但实际上，它常常会导致在内存的末尾分配空间分裂成小的碎片，它通常比首次适应算法结果要差。</p>
+<p>最佳导致大量碎片，最坏导致没有大的空间。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">算法</th>
+<th style="text-align: left;">算法思想</th>
+<th style="text-align: left;">分区排列顺序</th>
+<th style="text-align: left;">优点</th>
+<th style="text-align: left;">缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">首次适应</td>
+<td style="text-align: left;">从头到尾找适合的分区</td>
+<td style="text-align: left;">空闲分区以地址递增次序排列</td>
+<td style="text-align: left;">综合看性能最好。<strong>算法开销小</strong>，回收分区后一.般不需要对空闲分区队列重新排序</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">最佳适应</td>
+<td style="text-align: left;">优先使用更小的分区，以保留更多大分区</td>
+<td style="text-align: left;">空闲分区以容量递增次序排列</td>
+<td style="text-align: left;">会有更多的大分区被保留下来，更能满足大进程需求</td>
+<td style="text-align: left;">会产生很多太小的、难以利用的碎片;<strong>算法开销大</strong>，回收分区后可能需要对空闲分区队列重新排序</td>
+</tr>
+<tr>
+<td style="text-align: left;">最坏适应</td>
+<td style="text-align: left;">优先使用更大的分区，以防止产生太小的不可用的碎片</td>
+<td style="text-align: left;">空闲分区以容量递减次序排列</td>
+<td style="text-align: left;">可以减少难以利用的小碎片</td>
+<td style="text-align: left;">大分区容易被用完，不利于大进程;<strong>算法开销大</strong>(原因同上)</td>
+</tr>
+<tr>
+<td style="text-align: left;">邻近适应</td>
+<td style="text-align: left;">由首次适应演变而来，每次从上次查找结束位置开始查找</td>
+<td style="text-align: left;">空闲分区以地址递增次序排列(可排列成循环链表)</td>
+<td style="text-align: left;">不用每次都从低地址的小分区开始检索。<strong>算法开销小</strong>(原因同首次适应算法)</td>
+<td style="text-align: left;">会使高地址的大分区也被用完</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. 介绍虚拟技术</strong></p>
+<p>虚拟技术把一个物理实体转换为多个逻辑实体。</p>
+<p>主要有两种虚拟技术：时（时间）分复用技术和空（空间）分复用技术。</p>
+<p>多进程与多线程：多个进程能在同一个处理器上并发执行使用了时分复用技术，让每个进程轮流占用处理器，每次只执行一小个时间片并快速切换。</p>
+<p>虚拟内存使用了空分复用技术，它将物理内存抽象为地址空间，每个进程都有各自的地址空间。地址空间的页被映射到物理内存，地址空间的页并不需要全部在物理内存中，当使用到一个没有在物理内存的页时，执行页面置换算法，将该页置换到内存中。</p>
+<p><strong>4. 操作系统在对内存进行管理的时候需要做些什么?</strong></p>
+<ol>
+<li>操作系统负责内存空间的分配与回收。</li>
+<li>操作系统需要提供某种技术从逻辑上对内存空间进行扩充。</li>
+<li>操作系统需要提供地址转换功能，负责程序的逻辑地址与物理地址的转换。</li>
+<li>操作系统需要提供内存保护功能。保证各进程在各自存储空间内运行，互不干扰</li>
+</ol>
+<p><strong>5. 内存分配方式</strong></p>
+<p>（1） 从静态存储区域分配。内存在程序编译的时候就已经分配好，这块内存在程序的整个运行期间都存在。例如全局变量，static变量。</p>
+<p>（2） 在栈上创建。在执行函数时，函数内局部变量的存储单元都可以在栈上创建，函数执行结束时这些存储单元自动被释放。栈内存分配运算内置于处理器的指令集中，效率很高，但是分配的内存容量有限。</p>
+<p>（3） 从堆上分配，亦称动态内存分配。程序在运行的时候用malloc或new申请任意多少的内存，程序员自己负责在何时用free或delete释放内存。动态内存的生存期由我们决定，使用非常灵活，但问题也最多。</p>
+<p><strong>6. 常见内存分配内存错误</strong></p>
+<p>（1）内存分配未成功，却使用了它。</p>
+<p>（2）内存分配虽然成功，但是尚未初始化就引用它。</p>
+<p>（3）内存分配成功并且已经初始化，但操作越过了内存的边界。</p>
+<p>（4）忘记了释放内存，造成内存泄露。</p>
+<p>（5）释放了内存却继续使用它。</p>
+<p><strong>7. 内存交换中，被换出的进程保存在哪里？</strong>
+        <strong>保存在磁盘中，也就是外存中</strong>。</p>
+<p>​       具有对换功能的操作系统中，通常把磁盘空间分为<strong>文件区和对换区</strong>两部分。文件主要用于存放文件，主要追</p>
+<p>求存储空间的利用率，因此对文件区空间的管理采用离散分配方式;对换区空间只占磁盘空间的小部分，被换出的</p>
+<p>进程数据就存放在对换区。</p>
+<p>​       由于对换的速度直接影响到系统的整体速度，因此对换区空间的管理主要追求换入换出速度，因此通常对换区采用连续分配方式(学过文件管理章节后即可理解)。总之，对换区的I/O速度比文件区的更快。</p>
+<p><strong>8. 虚拟内存和共享内存</strong></p>
+<p>（1）虚拟内存:</p>
+<p>虚拟内存是一种<strong>内存管理方式</strong>，它通过<strong>把程序切成小块</strong>，只把目前需要的部分放入物理内存中，其他的部分暂存在磁盘上，也被称为虚拟存储器。</p>
+<p><strong>物理存储器</strong>和<strong>虚拟存储器</strong>都被分割为许多大小相同的块，分别称为<strong>物理页</strong>与<strong>虚拟页</strong>，二者之间的映射关系用页表记录。</p>
+<p>虚拟内存的好处:</p>
+<ul>
+<li>扩大地址空间：例如虚拟地址空间32位，物理地址空间24位。</li>
+<li>公平内存分配：每个进程都相当于有同样大小的虚存空间。</li>
+<li>内存保护：每个进程运行在各自的虚拟内存地址空间，互相不能干扰对方。</li>
+<li>节省内存：当不同的进程使用同样的代码时（比如库文件中的代码），物理内存中可以只存储一份代码，不同的进程把自己的虚拟内存映射到同一物理内存上。</li>
+<li>利用碎片：在程序需要分配连续的内存空间的时候，只需要在虚拟内存空间分配连续空间，而不需要实际物理内存的连续空间，可以利用物理空间的碎片。</li>
+</ul>
+<p>（2） 共享内存</p>
+<p>共享内存是一种<strong>进程间通信</strong>方式，允许不同进程将<strong>自己的虚拟地址</strong>映射到<strong>同一块物理地址</strong>上，从而共享同一段物理内存。</p>
+<p>（3）内存映射是什么</p>
+<p>内存映射主要是mmap系统调用，是指<strong>将一个文件</strong>或者其它对象<strong>映射到进程地址空间</strong>的方法。</p>
+<p>内存映射的好处：</p>
+<ul>
+<li>读文件比普通磁盘I/O要快：普通磁盘I/O读写文件要先把内容拷贝到页缓存（内核空间）中，然后再拷贝到用户空间中供使用，有2次拷贝。
+  而mmap读写文件是利用缺页异常把文件内容从磁盘换到用户空间中，只有1次拷贝，因此效率较高。</li>
+<li>实现共享内存：不同进程使用mmap将自身用户空间映射到同一文件或同一匿名区域，实现高效的进程间通信。</li>
+</ul>
+<h3 id="_4">磁盘管理相关<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><strong>1. 一个程序从开始运行到结束的完整过程</strong>（了解）
+四个过程：</p>
+<p><strong>（1）预编译/预处理</strong> 主要处理源代码文件中的以“#”开头的预编译指令。</p>
+<p><strong>（2）编译</strong> 把预编译之后生成的xxx.i或xxx.ii文件，进行一系列词法分析、语法分析、语义分析及优化后，生成相应的汇编代码文件。</p>
+<p><strong>（3）汇编</strong></p>
+<p>将汇编代码转变成机器可以执行的指令(机器码文件)。 汇编器的汇编过程相对于编译器来说更简单，没有复杂的语法，也没有语义，更不需要做指令优化，只是根据汇编指令和机器指令的对照表一一翻译过来，汇编过程由汇编器完成。经汇编之后，<strong>产生目标文件</strong>。</p>
+<p><strong>（4）链接</strong></p>
+<p>将不同的源文件产生的目标文件进行链接，从而形成一个可以执行的程序。链接分为静态链接和动态链接：</p>
+<p>1、静态链接： 函数和数据被编译进一个二进制文件。在使用静态库的情况下，在编译链接可执行文件时，链接器从库中复制这些函数和数据并把它们和应用程序的其它模块组合起来创建最终的可执行文件。 空间浪费：因为每个可执行程序中对所有需要的目标文件都要有一份副本，所以如果多个程序对同一个目标文件都有依赖，会出现同一个目标文件都在内存存在多个副本； 更新困难：每当库函数的代码修改了，这个时候就需要重新进行编译链接形成可执行程序。</p>
+<p>运行速度快：但是静态链接的优点就是，在可执行程序中已经具备了所有执行程序所需要的任何东西，在执行的时候运行速度快。</p>
+<p>2、动态链接： 动态链接的基本思想是把程序按照模块拆分成各个相对独立部分，在程序运行时才将它们链接在一起形成一个完整的程序，而不是像静态链接一样把所有程序模块都链接成一个单独的可执行文件。</p>
+<p>共享库：就是即使需要每个程序都依赖同一个库，但是该库不会像静态链接那样在内存中存在多份副本，而是这多个程序在执行时共享同一份副本；</p>
+<p>更新方便：更新时只需要替换原来的目标文件，而无需将所有的程序再重新链接一遍。当程序下一次运行时，新版本的目标文件会被自动加载到内存并且链接起来，程序就完成了升级的目标。</p>
+<p>性能损耗：因为把链接推迟到了程序运行时，所以每次执行程序都需要进行链接，所以性能会有一定损失。</p>
+
+    <!-- Last update of source file -->
+    
+
+    
+
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../Java36%E8%AE%B2/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Java基础">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Java基础
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="md-footer__link md-footer__link--next" aria-label="下一页: 计算机网络">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                计算机网络
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/cloudinwind" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<cloudinwind@out.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://space.bilibili.com" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

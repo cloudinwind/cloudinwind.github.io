@@ -1,0 +1,6039 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="小风">
+      
+      
+        <link rel="canonical" href="https://www.cloudinwind.github.io/%E6%89%BE%E5%B7%A5%E4%BD%9C%E5%87%86%E5%A4%87/%E7%AE%97%E6%B3%95/2.%E9%93%BE%E8%A1%A8/">
+      
+      
+        <link rel="prev" href="../1.%E6%95%B0%E7%BB%84/">
+      
+      
+        <link rel="next" href="../3.%E5%93%88%E5%B8%8C%E8%A1%A8/">
+      
+      
+      <link rel="icon" href="https://pic.imgdb.cn/item/66d2d740d9c307b7e91a82b4.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>链表 - 小风的代码世界</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto Slab";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="default" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="小风的代码世界" class="md-header__button md-logo" aria-label="小风的代码世界" data-md-component="logo">
+      
+  <img src="https://pic.imgdb.cn/item/66d2d740d9c307b7e91a82b4.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            小风的代码世界
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              链表
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="default" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cloudinwind/cloudinwind.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudinwind/cloudinwind.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  自学
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tags/" class="md-tabs__link">
+        
+  
+    
+  
+  标签
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E4%B8%80%E4%BA%9Bdiy/Halo%E9%99%84%E4%BB%B6%E5%AD%98%E5%82%A8/" class="md-tabs__link">
+          
+  
+    
+  
+  一些diy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/CS%20%E4%BF%9D%E7%A0%94%E6%9C%BA%E8%AF%95%E5%87%86%E5%A4%87%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+          
+  
+    
+  
+  保研圈
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/JVM/" class="md-tabs__link">
+          
+  
+    
+  
+  找工作准备
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="小风的代码世界" class="md-nav__button md-logo" aria-label="小风的代码世界" data-md-component="logo">
+      
+  <img src="https://pic.imgdb.cn/item/66d2d740d9c307b7e91a82b4.jpg" alt="logo">
+
+    </a>
+    小风的代码世界
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cloudinwind/cloudinwind.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudinwind/cloudinwind.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    自学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    标签
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    一些diy
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            一些diy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/Halo%E9%99%84%E4%BB%B6%E5%AD%98%E5%82%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    个人网站 #图床配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/Jupyter%E4%B8%AD%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jupyter中配置虚拟环境
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/TXT%20%E8%BD%AC%20EPUB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TXT 转 EPUB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/VSCode%20%E9%85%8D%E7%BD%AE%20Java%20%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSCode 配置 Java 环境
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/docker%E5%AE%89%E8%A3%85mysql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker安装mysql
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/navicat%E7%9B%B8%E5%85%B3%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Navicat相关安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/pyteria%20%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pyteria 环境配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/ubuntu%2022.04%20%E5%AE%89%E8%A3%85%20docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ubuntu 22.04 安装 docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/%E4%BD%BF%E7%94%A8NotionNext%E5%AE%8C%E6%88%90%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用NotionNext完成博客部署
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/%E5%85%B3%E4%BA%8Edocker%E9%95%9C%E5%83%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    关于docker镜像
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文本格式转换
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E6%A0%87/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    服务器中添加图标
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    服务器安装redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%B8%80%E4%BA%9Bdiy/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%85%A8%E8%BF%87%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    环境配置全过程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    保研圈
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            保研圈
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    保研必知
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            保研必知
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/CS%20%E4%BF%9D%E7%A0%94%E6%9C%BA%E8%AF%95%E5%87%86%E5%A4%87%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS 保研机试准备指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/CS%20%E4%BF%9D%E7%A0%94%E9%99%A2%E6%A0%A1%E5%BC%BA%E5%BC%B1com%E7%9B%98%E7%82%B9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS 保研院校强弱com盘点
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/CS%E4%BF%9D%E7%A0%94%20%E9%99%A2%E6%A0%A1%E5%A1%AB%E6%8A%A5%E6%95%B0%E9%87%8F%E5%A4%A7%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS保研 院校填报数量大解析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/CS%E4%BF%9D%E7%A0%94%E9%99%A2%E6%A0%A1%E5%A4%A7%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS保研 院校机试大解析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/CS%E4%BF%9D%E7%A0%94%E9%99%A2%E6%A0%A1%E6%9C%BA%E8%AF%95%E5%A4%A7%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS保研 院校机试大解析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    个人简历
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/%E4%BF%9D%E7%A0%94%E7%94%9F%E5%BF%85%E7%9F%A5%E7%9A%84%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    保研生必知的知识
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/%E4%BF%9D%E7%A0%94%E9%BB%91%E8%AF%9D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    保研黑话
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/%E5%90%84%E5%AD%A6%E9%99%A2%E5%AF%B9rank%E7%9A%84%E8%A6%81%E6%B1%82/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    各学院对rank的要求
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/%E5%A4%A7%E4%B8%89%E4%BF%9D%E7%A0%94%E7%94%9F%E7%BB%9D%E4%B8%8D%E8%83%BD%E9%94%99%E8%BF%87%E7%9A%84%E5%B9%B2%E8%B4%A7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    大三保研生绝不能错过的干货
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E4%BF%9D%E7%A0%94%E5%BF%85%E7%9F%A5/%E8%80%81%E5%B8%88%E6%8E%A8%E8%8D%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    老师推荐
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    辅导全流程
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            辅导全流程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/Tips/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tips
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E6%8B%9F%E5%BD%95%E5%8F%96%E7%BB%93%E6%9E%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第0级：
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E9%80%9A%E7%9F%A52025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    院校通知2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_4" id="__nav_4_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2024拟录取名单
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            2024拟录取名单
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E4%B8%8A%E4%BA%A4%E7%94%B5%E9%99%A22024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    上交电院2024推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E5%A4%A7%E5%AD%A6%E4%BF%A1%E6%81%AF%E5%AD%A6%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中国人民大学信息学院2024届推免拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E4%B8%AD%E7%A7%91%E5%A4%A72024%E6%8B%9F%E5%BD%95%E5%8F%96%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中科大2024拟录取结果分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E4%BA%BA%E5%A4%A7%E9%AB%98%E7%93%B42024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    上交电院2024推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    北京大学计算机学院2024届推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8C%97%E5%A4%A7%E6%95%B0%E5%AD%A6%E7%A7%91%E5%AD%A6%E5%AD%A6%E9%99%A2%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%93%E4%B8%9A2024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    北大数学科学学院大数据专业2024推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8C%97%E5%A4%A7%E6%99%BA%E8%83%BD%E5%AD%A6%E9%99%A2%E3%80%81%E5%89%8D%E6%B2%BF%E4%BA%A4%E5%8F%89%E5%92%8C%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%862024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    北大智能学院、前沿交叉和信息管理2024届推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8C%97%E5%A4%A7%E6%B7%B1%E5%9C%B32024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    北大深圳2024届推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8C%97%E5%A4%A7%E8%BD%AF%E5%BE%AE2024%E5%B1%8A%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    北大软微2024届拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8D%97%E5%A4%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E9%99%A22024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    南大人工智能学院2024拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8D%97%E5%A4%A7%E6%99%BA%E8%83%BD%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E5%AD%A6%E9%99%A22024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    南大智能科学与技术学院2024拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8D%97%E5%A4%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    南大计算机系2024拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%8D%97%E5%A4%A7%E8%BD%AF%E4%BB%B6%E5%AD%A6%E9%99%A22024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    南大软件学院2024推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%9B%BD%E9%98%B2%E7%A7%91%E5%A4%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%81%E7%94%B5%E5%AD%90%E5%AF%B9%E6%8A%97%E7%AD%892024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    国防科大计算机、电子对抗等2024拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%A4%8D%E6%97%A6%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6%E4%B8%8E%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A22024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复旦信息科学与工程学院2024推免拟录取
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%A4%8D%E6%97%A6%E5%B7%A5%E7%A0%94%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复旦工研院2024届推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%A4%8D%E6%97%A6%E7%B1%BB%E8%84%91%E6%99%BA%E8%83%BD%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%99%A22024%E5%B1%8A%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复旦类脑智能科学与技术研究院2024届拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E5%A4%8D%E6%97%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E9%99%A22024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复旦计算机学院2024推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B5%99%E5%A4%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    浙大工程师学院2024届推免拟录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B5%99%E5%A4%A7%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E3%80%81%E6%B5%B7%E6%B4%8B%E3%80%81%E5%9B%BD%E9%99%85%E8%81%94%E5%90%88%E5%AD%A6%E9%99%A22024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    浙大航空航天、海洋、国际联合学院2024推免拟
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B5%99%E5%A4%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E7%9B%B4%E5%8D%9A%E7%94%9F%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    浙大计算机学院2024届推免直博生名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B5%99%E5%A4%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E9%99%A22024%E6%8E%A8%E5%85%8D%E7%A1%95%E5%A3%AB%E7%94%9F%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    浙大计算机学院2024推免硕士生拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B5%99%E5%A4%A7%E8%BD%AF%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95%E5%8F%8A%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    浙大软院2024届推免录取名单及分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E4%BA%A4%E5%8F%89%E4%BF%A1%E6%81%AF%E7%A0%94%E7%A9%B6%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华交叉信息研究院2024届推免拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E5%85%A8%E7%90%83%E5%88%9B%E6%96%B0%E5%AD%A6%E9%99%A2%E5%92%8C%E9%AB%98%E7%AD%89%E7%A0%94%E7%A9%B6%E9%99%A2%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华全球创新学院和高等研究院2024届拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E7%B3%BB2024%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华大学自动化系2024推免拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E6%B7%B1%E5%9C%B32024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华深圳2024拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E7%BD%91%E5%AE%892024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华网安2024届推免拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E8%B4%B5%E7%B3%BB2024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华贵系2024届推免拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2024%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/%E6%B8%85%E5%8D%8E%E8%BD%AF%E9%99%A22024%E5%B1%8A%E6%8E%A8%E5%85%8D%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    清华软院2024届推免拟录取名单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_5" id="__nav_4_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2025拟录取名单
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            2025拟录取名单
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2025%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/2.%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.北京大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2025%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/3.%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.上海交通大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/2025%E6%8B%9F%E5%BD%95%E5%8F%96%E5%90%8D%E5%8D%95/8.%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.中国人民大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_6" id="__nav_4_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    院校考核经验
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            院校考核经验
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/1.%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.清华大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/10.%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.武汉大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/11.%E5%8D%8E%E4%B8%AD%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.华中科技大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/12.%E5%90%8C%E6%B5%8E%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.同济大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/13.%E5%93%88%E5%B0%94%E6%BB%A8%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.哈尔滨工业大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/14.%E8%A5%BF%E5%AE%89%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.西安交通大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/15.%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.南开大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/16.%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16.中山大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/17.%E5%8C%97%E4%BA%AC%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17.北京理工大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/18.%E5%8D%8E%E4%B8%9C%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.华东师范大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/19.%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.电子科技大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/2.%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.北京大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/20.%E5%A4%A9%E6%B4%A5%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20.天津大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/21.%E4%B8%9C%E5%8D%97%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21.东南大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/22.%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22.厦门大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/23.%E5%8D%8E%E5%8D%97%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23.华南理工大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/24.%E5%8C%97%E4%BA%AC%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24.北京师范大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/25.%E5%9B%BD%E9%98%B2%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25.国防科技大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/26.%E5%9B%9B%E5%B7%9D%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    26.四川大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/27.%E5%B1%B1%E4%B8%9C%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    27.山东大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/28.%E5%90%89%E6%9E%97%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    28.吉林大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/29.%E8%A5%BF%E5%8C%97%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    29.西北工业大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/3.%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.上海交通大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/30.%E5%A4%A7%E8%BF%9E%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    30.大连理工大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/31.%E4%B8%AD%E5%8D%97%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    31.中南大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/32.%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    32.重庆大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/33.%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    33.湖南大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/34.%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    34.东北大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/4.%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.复旦大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/5.%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.浙江大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/6.%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.南京大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/7.%E4%B8%AD%E7%A7%91%E5%A4%A7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.中科大
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/8.%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.中国人民大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/9.%20%E5%8C%97%E4%BA%AC%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E5%A4%A7%E5%AD%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. 北京航空航天大学
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/%E4%B8%80%E4%BA%9B%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    一些研究方向
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0级
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_6_37" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_6_37" id="__nav_4_2_6_37_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    中科院
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_6_37_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_6_37">
+            <span class="md-nav__icon md-icon"></span>
+            中科院
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/%E4%B8%AD%E7%A7%91%E9%99%A2/%E4%B8%AD%E7%A7%91%E9%99%A2%E4%BF%A1%E5%B7%A5%E6%89%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中科院信工所
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/%E4%B8%AD%E7%A7%91%E9%99%A2/%E4%B8%AD%E7%A7%91%E9%99%A2%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中科院自动化所
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/%E4%B8%AD%E7%A7%91%E9%99%A2/%E4%B8%AD%E7%A7%91%E9%99%A2%E8%AE%A1%E7%AE%97%E6%89%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中科院计算所
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%9D%E7%A0%94%E5%9C%88/%E8%BE%85%E5%AF%BC%E5%85%A8%E6%B5%81%E7%A8%8B/%E9%99%A2%E6%A0%A1%E8%80%83%E6%A0%B8%E7%BB%8F%E9%AA%8C/%E4%B8%AD%E7%A7%91%E9%99%A2/%E4%B8%AD%E7%A7%91%E9%99%A2%E8%BD%AF%E4%BB%B6%E6%89%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中科院软件所
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    找工作准备
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            找工作准备
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    基础知识
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            基础知识
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/JVM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JVM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Java%20%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java 基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Java36%E8%AE%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    计算机操作系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    计算机网络
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E9%87%91%E5%85%B8%E9%A2%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    金典题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    投递
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            投递
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E5%B8%B8%E7%94%A8%E5%86%85%E5%AE%B9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常用内容
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    招商银行
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    面试总结
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            面试总结
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/360/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    360
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/58%E5%90%8C%E5%9F%8E/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    58同城
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/OPPO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OPPO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/Shopee%20%E8%99%BE%E7%9A%AE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shopee 虾皮
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/TCL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TCL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/Vivo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vivo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E4%B8%AD%E5%85%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中兴
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E4%B8%AD%E5%9B%BD%E7%BD%91%E5%AE%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中国网安
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E5%8D%8E%E4%B8%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    华为
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E5%B0%8F%E7%B1%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    小米
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E5%B0%8F%E7%BA%A2%E4%B9%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    小红书
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E5%B8%86%E8%BD%AF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    帆软
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    招商银行
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%8B%BC%E5%A4%9A%E5%A4%9A/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    拼多多
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%90%BA%E7%A8%8B%E9%9B%86%E5%9B%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    携程集团
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%B5%B7%E4%BF%A1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    海信
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%B5%B7%E5%85%89%E4%BF%A1%E6%81%AF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    海光信息
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%B5%B7%E5%BA%B7%E5%A8%81%E8%A7%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    海康威视
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E6%B7%B1%E4%BF%A1%E6%9C%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    深信服
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E7%99%BE%E5%BA%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    百度
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    科大讯飞
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E7%BE%8E%E5%9B%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    美团
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E8%81%94%E6%83%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    联想
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E8%8D%A3%E8%80%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    荣耀
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    面试总结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%95%E9%80%92/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/%E9%A1%BA%E9%A3%8E%E7%A7%91%E6%8A%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    顺风科技
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    算法
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            算法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    链表
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    链表
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 链表介绍
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 链表介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 链表的分类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 链表的存储方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 链表的实现（代码实现）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 链表的操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 性能分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 移除链表元素
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 设计链表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 反转链表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 两两交换链表中的节点
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 删除链表的倒数第N个节点
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 链表相交
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 环形链表 (重点看)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%E5%93%88%E5%B8%8C%E8%A1%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    哈希表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字符串
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    双指针法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    栈和队列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.%E4%BA%8C%E5%8F%89%E6%A0%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    二叉树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8.%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.动态规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ACWing%20%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ACWing 算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    项目
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            项目
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%A1%B9%E7%9B%AE/%E7%89%9B%E5%AE%A2%E7%A4%BE%E5%8C%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    牛客社区
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%A1%B9%E7%9B%AE/%E7%BD%91%E7%9B%98%E7%B3%BB%E7%BB%9F%202.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    网盘系统 2.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 链表介绍
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 链表介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 链表的分类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 链表的存储方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 链表的实现（代码实现）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 链表的操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 性能分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 移除链表元素
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 设计链表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 反转链表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 两两交换链表中的节点
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 删除链表的倒数第N个节点
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 链表相交
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 环形链表 (重点看)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+<!--
+Hack: check whether the content contains a h1 headline. If it
+doesn't, the page title (or respectively site name) is used
+as the main headline.
+-->
+
+
+<!-- Markdown content -->
+
+    
+
+    
+
+    <h1 id="_1">链表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>link : <a href="https://programmercarl.com/%E9%93%BE%E8%A1%A8%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html">代码随想录链表部分</a></p>
+</blockquote>
+<h2 id="1">1. 链表介绍<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 链表的分类<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p><strong>单链表</strong></p>
+<p>链表：链表是一种通过指针串联在一起的线性结构，每一个节点由两部分组成，一个是数据域一个是指针域（存放指向下一个节点的指针），最后一个节点的指针域指向null（空指针的意思）。</p>
+<p>链表的入口节点称为链表的头结点也就是head。</p>
+<p>图示：
+<img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20200806194529815.png" /></p>
+<p><strong>双链表</strong></p>
+<p>双链表：每一个节点有两个指针域，一个指向下一个节点，一个指向上一个节点。</p>
+<p>双链表 既可以向前查询也可以向后查询。</p>
+<p>图示：
+<img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20200806194559317.png" /></p>
+<p><strong>循环链表</strong></p>
+<p>循环链表，就是链表首尾相连。</p>
+<p>循环链表可以用来解决 <mark style="background: #FF5582A6;">约瑟夫环问题。</mark></p>
+<p><img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20200806194629603.png" /></p>
+<h3 id="12">1.2 链表的存储方式<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>链表是通过指针域的指针链接在内存中各个节点。</p>
+<p>所以链表中的节点在内存中不是连续分布的 ，而是散乱分布在内存中的某地址上，分配机制取决于操作系统的内存管理。</p>
+<blockquote>
+<p>即 数组在内存中是连续分布的，链表在内存中不是连续分布的</p>
+</blockquote>
+<p><img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20200806194613920.png" /></p>
+<blockquote>
+<p>这个链表起始节点为2， 终止节点为7， 各个节点分布在内存的不同地址空间上，通过指针串联在一起。</p>
+</blockquote>
+<h3 id="13">1.3 链表的实现（代码实现）<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ListNode</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 结点的值</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// 下一个结点</span>
+<span class="w">    </span><span class="n">ListNode</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// 节点的构造函数(无参)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ListNode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// 节点的构造函数(有一个参数)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ListNode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// 节点的构造函数(有两个参数)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ListNode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="n">ListNode</span><span class="w"> </span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>一定要自己定义构造函数, 从而便于在初始化的时候为数据域赋值</p>
+</blockquote>
+<h3 id="14">1.4 链表的操作<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
+<p><strong>删除节点</strong></p>
+<p>删除节点 D ：</p>
+<p><img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20200806195114541-20230310121459257.png" />
+将C节点的next指针 指向E节点就可以了</p>
+<p><strong>添加节点</strong></p>
+<p>添加节点 F ：</p>
+<p><img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20200806195134331-20230310121503147.png" /></p>
+<blockquote>
+<p>链表的增添和删除都是O(1)操作，也不会影响到其他节点。
+但是如果删除最后一个节点，就需要从头开始查找，复杂度为 <span class="arithmatex">\(O(n)\)</span></p>
+</blockquote>
+<h3 id="15">1.5 性能分析<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20200806195200276.png" /></p>
+<p>数组在定义的时候，长度就是固定的，如果想改动数组的长度，就需要重新定义一个新的数组。</p>
+<p>链表的长度可以是不固定的，并且可以动态增删， 适合数据量不固定，频繁增删，较少查询的场景。</p>
+<h2 id="2">2. 移除链表元素<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>link : <a href="https://leetcode.cn/problems/remove-linked-list-elements/description/">LeetCode 203</a></p>
+</blockquote>
+<p><strong>思考：</strong></p>
+<p>以链表 1 4 2 4 来举例，移除元素4：</p>
+<p><img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210316095351161.png" /></p>
+<p>特殊情况：移除头节点</p>
+<p><img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/2021031609544922.png" /></p>
+<p>移除头结点和移除其他节点的操作是不一样的，因为<strong>链表的其他节点都是通过前一个节点来移除当前节点</strong>，而头结点没有前一个节点。</p>
+<p><strong>移除头节点的两种方式：</strong></p>
+<ul>
+<li>直接使用原来的链表来进行删除操作。</li>
+<li>设置一个虚拟头结点在进行删除操作</li>
+</ul>
+<p>方法一：直接使用原来的链表来进行删除操作。(将头结点向后移动一位，这样就从链表中移除了一个头结点)</p>
+<p><img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210316095512470.png" /></p>
+<p>这种情况下，将移除头节点作为一种特殊的情况，单独写一段代码来处理</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+
+<span class="cm"> * Definition for singly-linked list.</span>
+
+<span class="cm"> * public class ListNode {</span>
+
+<span class="cm"> *     int val;</span>
+
+<span class="cm"> *     ListNode next;</span>
+
+<span class="cm"> *     ListNode() {}</span>
+
+<span class="cm"> *     ListNode(int val) { this.val = val; }</span>
+
+<span class="cm"> *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }</span>
+
+<span class="cm"> * }</span>
+
+<span class="cm"> */</span>
+
+<span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ListNode</span><span class="w"> </span><span class="nf">removeElements</span><span class="p">(</span><span class="n">ListNode</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// 直接在原链表进行操作</span>
+
+<span class="w">        </span><span class="c1">// 判断头节点是否满足要求</span>
+
+<span class="w">        </span><span class="c1">// 必须使用while, 从而保证得到的 链表 头节点不满足要求</span>
+
+<span class="w">        </span><span class="c1">// 比如 1 1 1 1 2, val=1 的情况</span>
+
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">head</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">head</span><span class="p">.</span><span class="na">val</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">val</span><span class="p">){</span>
+
+<span class="w">            </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// 判断非头节点</span>
+
+<span class="w">        </span><span class="c1">// 非头节点的删除是通过前一个节点来完成</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// 需要判断 newNode是否为空</span>
+
+<span class="w">        </span><span class="c1">// 比如 1 1 1 1 1, val = 1, 那么 newNode=null</span>
+
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">newNode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">newNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">newNode</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">val</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">val</span><span class="p">){</span>
+
+<span class="w">                </span><span class="n">newNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">            </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+
+<span class="w">                </span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>方法二：设置一个虚拟头结点在进行删除操作 (这样原链表的所有节点就都可以按照统一的方式进行移除了)</p>
+<p><img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210316095619221.png" /></p>
+<p>最后在题目中，return 头结点的时候，别忘了 <code>return virtualHead.next;</code></p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+
+<span class="cm"> * Definition for singly-linked list.</span>
+
+<span class="cm"> * public class ListNode {</span>
+
+<span class="cm"> *     int val;</span>
+
+<span class="cm"> *     ListNode next;</span>
+
+<span class="cm"> *     ListNode() {}</span>
+
+<span class="cm"> *     ListNode(int val) { this.val = val; }</span>
+
+<span class="cm"> *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }</span>
+
+<span class="cm"> * }</span>
+
+<span class="cm"> */</span>
+
+<span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ListNode</span><span class="w"> </span><span class="nf">removeElements</span><span class="p">(</span><span class="n">ListNode</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// 设置一个虚拟节点, 从而使得删除头节点和删除非头节点都是通过前面的节点实现</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">virtualHead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ListNode</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">head</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">virtualHead</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">newNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">newNode</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">val</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
+
+<span class="w">                </span><span class="n">newNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">virtualHead</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="3">3. 设计链表<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>link : <a href="https://leetcode.cn/problems/design-linked-list/description/">LeetCode 707</a></p>
+</blockquote>
+<p><strong>思考：</strong></p>
+<p>这道题目设计链表的五个接口：</p>
+<ul>
+<li>获取链表第index个节点的数值</li>
+<li>在链表的最前面插入一个节点</li>
+<li>在链表的最后面插入一个节点</li>
+<li>在链表第index个节点前面插入一个节点</li>
+<li>删除链表的第index个节点</li>
+</ul>
+<p>链表操作的两种方式：
+- 直接使用原来的链表进行操作
+- 设置一个虚拟头节点进行操作</p>
+<p><strong>采用 设置一个虚拟头节点的方法：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 定义链表节点类</span>
+
+<span class="kd">class</span> <span class="nc">ListNode</span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">ListNode</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+
+
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ListNode</span><span class="p">(){}</span>
+
+
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ListNode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">){</span>
+
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+
+<span class="w">    </span><span class="p">}</span>
+
+
+
+<span class="p">}</span>
+
+
+
+
+<span class="kd">class</span> <span class="nc">MyLinkedList</span><span class="w"> </span><span class="p">{</span>
+
+
+
+<span class="w">    </span><span class="c1">// 链表的虚拟头节点</span>
+
+<span class="w">    </span><span class="n">ListNode</span><span class="w"> </span><span class="n">virtualHead</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// size: 链表的元素个数</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
+
+
+
+
+<span class="w">    </span><span class="c1">// 初始化链表</span>
+
+<span class="w">    </span><span class="c1">// 此处是初始化一个虚拟的头节点</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MyLinkedList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">virtualHead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ListNode</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// 获取到第index个节点数值，如果index是非法数值直接返回-1， 注意index是从0开始的，第0个节点就是头结点</span>
+
+<span class="w">    </span><span class="c1">// 因为index是从0开始, 所以index的有效范围为 [0, size-1]</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">tempNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">virtualHead</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// 因为包含了虚拟节点,所以进行查找的时候需要查找到 第 index+1 个节点</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">index</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+<span class="w">            </span><span class="n">tempNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempNode</span><span class="p">.</span><span class="na">val</span><span class="p">;</span>
+
+
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+
+
+
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// 在链表最前面插入一个节点，插入完成后，新插入的节点为链表的新的头结点</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addAtHead</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">newHeadNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ListNode</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 因为是在链表的最前面插入一个节点, 所以下一个节点是原链表的头节点</span>
+
+<span class="w">        </span><span class="n">newHeadNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">virtualHead</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">virtualHead</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newHeadNode</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// 插入一个节点, 链表的长度加一</span>
+
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="o">++</span><span class="p">;</span>
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// 在链表最后面添加一个节点</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addAtTail</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ListNode</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">tempNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">virtualHead</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">tempNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+
+<span class="w">            </span><span class="n">tempNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">tempNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
+
+
+
+<span class="w">        </span><span class="c1">// 链表节点加一</span>
+
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="o">++</span><span class="p">;</span>
+
+
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// 在第index个节点之前插入一个新节点，例如index为0，那么新插入的节点为链表的新头节点。</span>
+
+<span class="w">    </span><span class="c1">// 如果index 等于链表的长度，则说明是新插入的节点为链表的尾结点</span>
+
+<span class="w">    </span><span class="c1">// 如果index大于链表的长度，则返回空</span>
+
+<span class="w">    </span><span class="c1">// 如果index小于0，则在头部插入节点</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addAtIndex</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// 在头部插入节点</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span>
+
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">addAtHead</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">size</span><span class="p">){</span>
+
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">addAtTail</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+
+<span class="w">        </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">size</span><span class="p">){</span>
+
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">        </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+
+
+
+<span class="w">            </span><span class="n">ListNode</span><span class="w"> </span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ListNode</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">ListNode</span><span class="w"> </span><span class="n">tempNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">virtualHead</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// 因为是插入到 链表中下标为index的节点之前, 所以需要找到该节点前面的 节点</span>
+
+<span class="w">            </span><span class="c1">// 而因为链表中有虚拟头节点, 所以相当于需要找到第 index - 1 + 1个节点</span>
+
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">index</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+
+<span class="w">                </span><span class="n">tempNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+
+
+<span class="w">            </span><span class="c1">// 找到前面的节点</span>
+
+<span class="w">            </span><span class="n">newNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">tempNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">size</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">     </span><span class="c1">// 删除第index个节点，如果index 大于等于链表的长度，直接return，注意index是从0开始的</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">deleteAtIndex</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">){</span>
+
+<span class="w">            </span><span class="n">ListNode</span><span class="w"> </span><span class="n">tempNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">virtualHead</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// 找到下标为 index 的前面的节点</span>
+
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">index</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+
+<span class="w">                </span><span class="n">tempNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+
+
+<span class="w">            </span><span class="c1">// 进行删除</span>
+
+<span class="w">            </span><span class="n">tempNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempNode</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+
+
+<span class="w">            </span><span class="n">size</span><span class="o">--</span><span class="p">;</span>
+
+
+
+<span class="w">        </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="4">4. 反转链表<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>link: <a href="https://leetcode.cn/problems/reverse-linked-list/description/">LeetCode 206</a></p>
+</blockquote>
+<p><strong>思考：</strong></p>
+<p>只需要改变链表的 next 指针的指向，就可以直接将链表反转，从而不用定义一个新的链表</p>
+<p><img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210218090901207.png" /></p>
+<p><strong>双指针法：</strong></p>
+<p><img alt="" src="https://code-thinking.cdn.bcebos.com/gifs/206.%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8.gif" />
+首先定义一个cur指针，指向头结点，再定义一个pre指针，初始化为null。</p>
+<blockquote>
+<p>首先要把 cur-&gt;next 节点用tmp指针保存一下，也就是保存一下这个节点。</p>
+<p>为什么要保存一下这个节点呢，因为接下来要改变 cur-&gt;next 的指向了，将cur-&gt;next 指向pre ，此时已经反转了第一个节点了。</p>
+<p>之后 需要pre 和 cur 都向前走一位</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+
+<span class="cm"> * Definition for singly-linked list.</span>
+
+<span class="cm"> * public class ListNode {</span>
+
+<span class="cm"> *     int val;</span>
+
+<span class="cm"> *     ListNode next;</span>
+
+<span class="cm"> *     ListNode() {}</span>
+
+<span class="cm"> *     ListNode(int val) { this.val = val; }</span>
+
+<span class="cm"> *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }</span>
+
+<span class="cm"> * }</span>
+
+<span class="cm"> */</span>
+
+<span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ListNode</span><span class="w"> </span><span class="nf">reverseList</span><span class="p">(</span><span class="n">ListNode</span><span class="w"> </span><span class="n">head</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// 使用双指针, 一个pre, 一个curNode, 一个指向当前节点之前的节点, 一个指向当前节点</span>
+
+
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">pre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// 当前的节点</span>
+
+<span class="w">        </span><span class="c1">// 需要当前节点遍历整个链表</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">curNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// 当前节点的下一个节点</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">tempNode</span><span class="p">;</span>
+
+
+
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">curNode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span>
+
+<span class="w">            </span><span class="n">tempNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">curNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pre</span><span class="p">;</span><span class="w"> </span><span class="c1">// 改变当前节点的指向</span>
+
+
+
+<span class="w">            </span><span class="c1">// 更新 pre 和 curNode, 都向前走一位</span>
+
+<span class="w">            </span><span class="n">pre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curNode</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">curNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempNode</span><span class="p">;</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// 遍历结束后, pre正好指向最后一个节点, curNode = null</span>
+
+<span class="w">        </span><span class="c1">// 因为改变了指针的指向, 所以最后的节点变成了头节点</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pre</span><span class="p">;</span>
+
+
+
+
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="5">5. 两两交换链表中的节点<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>link: <a href="https://leetcode.cn/problems/swap-nodes-in-pairs/">LeetCode 24</a></p>
+</blockquote>
+<p><strong>思考：</strong></p>
+<p>因为需要进行节点交换，而不是单纯更改节点内的值，因此需要改变节点的指针</p>
+<p>图示:</p>
+<p><img alt="" src="https://code-thinking.cdn.bcebos.com/pics/24.%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9-%E9%A2%98%E6%84%8F.jpg" /></p>
+<p><strong>交换过程：</strong></p>
+<ol>
+<li>初始的时候，cur指针指向虚拟的头节点（其实可以将cur看成虚拟头节点）</li>
+</ol>
+<p><img alt="" src="https://code-thinking.cdn.bcebos.com/pics/24.%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B91.png" /></p>
+<blockquote>
+<p>对节点的操作，需要前面的节点才能找到，因此为了保证对头节点的操作逻辑和与其他节点相同，涉及到链表的节点操作都用虚拟头节点</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">tmp1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur</span><span class="p">.</span><span class="na">next</span>
+<span class="n">tmp2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span>
+
+<span class="n">cur</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="c1">// 指向 cur-&gt;2</span>
+<span class="n">cur</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="c1">// 2-&gt;1</span>
+<span class="n">cur</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp2</span><span class="w"> </span><span class="c1">// 1-&gt;3</span>
+
+<span class="c1">// 更新cur, 向前移动两位</span>
+
+<span class="n">cur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="c1">// cur指向1号节点</span>
+</code></pre></div>
+<ol>
+<li>操作之后的链表
+<img alt="" src="https://code-thinking.cdn.bcebos.com/pics/24.%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B92.png" /></li>
+</ol>
+<p>即：
+<img alt="" src="https://code-thinking.cdn.bcebos.com/pics/24.%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B93.png" /></p>
+<p><strong>代码实现：</strong>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+
+<span class="cm"> * Definition for singly-linked list.</span>
+
+<span class="cm"> * public class ListNode {</span>
+
+<span class="cm"> *     int val;</span>
+
+<span class="cm"> *     ListNode next;</span>
+
+<span class="cm"> *     ListNode() {}</span>
+
+<span class="cm"> *     ListNode(int val) { this.val = val; }</span>
+
+<span class="cm"> *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }</span>
+
+<span class="cm"> * }</span>
+
+<span class="cm"> */</span>
+
+<span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ListNode</span><span class="w"> </span><span class="nf">swapPairs</span><span class="p">(</span><span class="n">ListNode</span><span class="w"> </span><span class="n">head</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// 使用虚拟头节点</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">virtualNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ListNode</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">head</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 定义当前节点, 一开始指向虚拟头节点, 从而保证处理头节点和其他节点采用相同的逻辑</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">curNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">virtualNode</span><span class="p">;</span>
+
+
+
+<span class="w">        </span><span class="c1">// 需要进行交换的是 curNode.next 和 curNode.next.next</span>
+
+<span class="w">        </span><span class="c1">// 因此需要保证两者都不为null</span>
+
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">curNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">curNode</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="o">!=</span><span class="kc">null</span><span class="p">){</span>
+
+<span class="w">            </span><span class="n">ListNode</span><span class="w"> </span><span class="n">tmp1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// 要保证链表的连接</span>
+
+<span class="w">            </span><span class="n">ListNode</span><span class="w"> </span><span class="n">tmp2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curNode</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+
+
+<span class="w">            </span><span class="n">curNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curNode</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span><span class="w"> </span><span class="c1">// cur-&gt;2</span>
+
+<span class="w">            </span><span class="n">curNode</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 2-&gt;1</span>
+
+<span class="w">            </span><span class="n">curNode</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 1-&gt;3</span>
+
+
+
+<span class="w">            </span><span class="c1">// 交换之后, cur 向前移动两位, 移动到 下一组需要交换的两个节点的前面一个节点</span>
+
+<span class="w">            </span><span class="n">curNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curNode</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">virtualNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+
+
+
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="6-n">6. 删除链表的倒数第N个节点<a class="headerlink" href="#6-n" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>link : <a href="https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/">LeetCode 19</a></p>
+</blockquote>
+<p><strong>思考：</strong> 要删除倒数第N个节点, 那么必须找到该节点前面的节点</p>
+<p><img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210510085957392.png" /></p>
+<p>使用双指针：双指针的经典应用，如果要删除倒数第n个节点，让fast移动n步，然后让fast和slow同时移动，直到fast指向链表末尾。删掉slow所指向的节点就可以了。</p>
+<p><strong>思路：</strong></p>
+<blockquote>
+<p>为了保证操作头节点的逻辑和操作其他节点相同，使用虚拟头节点</p>
+</blockquote>
+<ul>
+<li>
+<p>定义fast指针和slow指针，初始值为虚拟头结点，如图：
+<img alt="" src="https://code-thinking.cdn.bcebos.com/pics/19.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9.png" /></p>
+</li>
+<li>
+<p>fast首先走n + 1步 ，为什么是n+1呢，因为只有这样同时移动的时候slow才能指向删除节点的上一个节点（方便做删除操作），如图：(移动n步也可以, 代码实现是按照移动n步)</p>
+</li>
+</ul>
+<p><img alt="" src="https://code-thinking.cdn.bcebos.com/pics/19.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B91.png" /></p>
+<ul>
+<li>fast和slow同时移动，直到fast指向末尾，如题：
+<img alt="" src="https://code-thinking.cdn.bcebos.com/pics/19.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B92.png" /></li>
+<li>删除slow指向的下一个节点，如图：
+<img alt="" src="https://code-thinking.cdn.bcebos.com/pics/19.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B93.png" /></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+
+<span class="cm"> * Definition for singly-linked list.</span>
+
+<span class="cm"> * public class ListNode {</span>
+
+<span class="cm"> *     int val;</span>
+
+<span class="cm"> *     ListNode next;</span>
+
+<span class="cm"> *     ListNode() {}</span>
+
+<span class="cm"> *     ListNode(int val) { this.val = val; }</span>
+
+<span class="cm"> *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }</span>
+
+<span class="cm"> * }</span>
+
+<span class="cm"> */</span>
+
+<span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ListNode</span><span class="w"> </span><span class="nf">removeNthFromEnd</span><span class="p">(</span><span class="n">ListNode</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// 定义一个虚拟头节点, 从而保证处理头节点的逻辑和处理其他节点相同</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">virtualNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ListNode</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">head</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 使用双指针, 先让fastNode向前移动n步, 然后两者一块移动</span>
+
+<span class="w">        </span><span class="c1">// 当 fast指针 指向链表最后一个元素, slow指针指向目标节点的前一个节点</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">slowNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">virtualNode</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">fastNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">virtualNode</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+<span class="w">            </span><span class="n">fastNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fastNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+
+
+<span class="w">        </span><span class="c1">// 两者同时移动</span>
+
+<span class="w">        </span><span class="c1">// 当fastNode指向最后的一个元素跳出循环</span>
+
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">fastNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span>
+
+<span class="w">            </span><span class="n">slowNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">slowNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">fastNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fastNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+
+
+<span class="w">        </span><span class="c1">// 删除目标元素</span>
+
+<span class="w">        </span><span class="n">slowNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">slowNode</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">virtualNode</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="7">7. 链表相交<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>link: <a href="https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/description/">LeetCode 160</a></p>
+</blockquote>
+<p><strong>思考：</strong></p>
+<p><img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20211219221657.png" /></p>
+<p>题目即为求 两个链表交点的节点的指针（即 c1），但是交点不是数值相等, 而是指针相等, 比如下面的图是：
+<img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20211219221723.png" /></p>
+<p>很明显，相交的节点是 “8”， 而不是 “1”</p>
+<p><strong>思路：</strong></p>
+<p>首先求出两个链表的长度，然后求出两个链表的长度的差值，然后将指向长度比较长的链表的指针先移动</p>
+<p>比如下面图示：</p>
+<p>如下两个链表，目前curA指向链表A的头结点，curB指向链表B的头结点：</p>
+<p><img alt="" src="https://code-thinking.cdn.bcebos.com/pics/%E9%9D%A2%E8%AF%95%E9%A2%9802.07.%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4_1.png" /></p>
+<p>求出两个链表的长度，并求出两个链表长度的差值，然后让curA移动到，和curB 末尾对齐的位置，如图：</p>
+<p><img alt="" src="https://code-thinking.cdn.bcebos.com/pics/%E9%9D%A2%E8%AF%95%E9%A2%9802.07.%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4_2.png" />
+从而比较 curA和curB是否相等, 如果不相等的话，继续同时向后移动</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+
+<span class="cm"> * Definition for singly-linked list.</span>
+
+<span class="cm"> * public class ListNode {</span>
+
+<span class="cm"> *     int val;</span>
+
+<span class="cm"> *     ListNode next;</span>
+
+<span class="cm"> *     ListNode(int x) {</span>
+
+<span class="cm"> *         val = x;</span>
+
+<span class="cm"> *         next = null;</span>
+
+<span class="cm"> *     }</span>
+
+<span class="cm"> * }</span>
+
+<span class="cm"> */</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ListNode</span><span class="w"> </span><span class="nf">getIntersectionNode</span><span class="p">(</span><span class="n">ListNode</span><span class="w"> </span><span class="n">headA</span><span class="p">,</span><span class="w"> </span><span class="n">ListNode</span><span class="w"> </span><span class="n">headB</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">curA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">headA</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">curB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">headB</span><span class="p">;</span>
+
+
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">lenA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">lenB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// 求出两个链表的长度</span>
+
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">curA</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span>
+
+<span class="w">            </span><span class="n">curA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curA</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">lenA</span><span class="o">++</span><span class="p">;</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">curB</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span>
+
+<span class="w">            </span><span class="n">curB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curB</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">lenB</span><span class="o">++</span><span class="p">;</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+
+
+<span class="w">        </span><span class="n">curA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">headA</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">curB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">headB</span><span class="p">;</span>
+
+
+
+<span class="w">        </span><span class="c1">// 保证 A 链表是长度比较长的链表</span>
+
+<span class="w">        </span><span class="c1">// 如果不是则交换, 从而保证下面的逻辑通用</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lenB</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">lenA</span><span class="p">){</span>
+
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lenA</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">lenA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lenB</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">lenB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+
+
+
+<span class="w">            </span><span class="n">ListNode</span><span class="w"> </span><span class="n">tempNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curA</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">curA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curB</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">curB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempNode</span><span class="p">;</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+
+
+
+
+<span class="w">        </span><span class="c1">// 下面首先长度比较长的链表先移动两者的差值</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lenA</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lenB</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">gap</span><span class="o">--</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span>
+
+<span class="w">            </span><span class="n">curA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curA</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+
+
+<span class="w">        </span><span class="c1">// 判断curA和curB是否相等</span>
+
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">curA</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">curA</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">curB</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">curA</span><span class="p">;</span>
+
+
+
+<span class="w">            </span><span class="n">curA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curA</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">curB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curB</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+
+
+<span class="w">        </span><span class="p">}</span>
+
+
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+
+
+
+
+
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="8">8. 环形链表 (重点看)<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>link: <a href="https://leetcode.cn/problems/linked-list-cycle-ii/description/">LeetCode 142</a></p>
+</blockquote>
+<p><strong>题目描述：</strong></p>
+<p>给定一个链表的头节点  <code>head</code> ，返回链表开始入环的第一个节点。 如果链表无环，则返回 <code>null</code>。</p>
+<p>如果链表中有某个节点，可以通过连续跟踪 <code>next</code> 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 <code>pos</code> 来表示链表尾连接到链表中的位置（<strong>索引从 0 开始</strong>）。如果 <code>pos</code> 是 <code>-1</code>，则在该链表中没有环。<strong>注意：<code>pos</code> 不作为参数进行传递</strong>，仅仅是为了标识链表的实际情况。</p>
+<p><strong>不允许修改</strong> 链表。</p>
+<p><strong>思考：</strong></p>
+<blockquote>
+<p>link : <a href="https://programmercarl.com/0142.%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II.html#%E6%80%9D%E8%B7%AF">代码随想录 环形链表</a></p>
+<p>video: <iframe src="//player.bilibili.com/player.html?aid=300762117&bvid=BV1if4y1d7ob&cid=770074935&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></p>
+</blockquote>
+<p>考察两方面的内容：
+1. 判断链表是否有环（快慢双指针）
+2. 如果有环，如何寻找环的入口处</p>
+<p><strong>判断链表是否有环：</strong></p>
+<p>使用快慢指针法，分别定义 fast 和 slow 指针，从头结点出发，<strong>fast指针每次移动两个节点，slow指针每次移动一个节点</strong>，如果 fast 和 slow指针在途中相遇 ，说明这个链表有环。</p>
+<blockquote>
+<p>fast 必须是移动两个节点，slow 必须是移动一个节点，这样快指针相当于以 每次多移动一个节点的速度追赶慢指针，如果有环，则必定能够追赶上。
+如果fast每次移动三个节点，slow每次移动一个节点，这样快指针相当于以每次多移动两个节点的速度追赶慢指针，那么有可能会跳过慢指针</p>
+</blockquote>
+<p>fast 和 slow的移动图示：</p>
+<p><img alt="" src="https://code-thinking.cdn.bcebos.com/gifs/141.%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8.gif" /></p>
+<p><strong>如果链表中有环，如何寻找环的入口：</strong></p>
+<p>假设从头节点到环形入口节点 的节点数是 <span class="arithmatex">\(x\)</span> , 环形入口节点到 fast与slow相遇节点的节点书为 <span class="arithmatex">\(y\)</span>, 从相遇节点啊到环形入口节点 的节点数为 <span class="arithmatex">\(z\)</span></p>
+<p><img alt="" src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220925103433.png" /></p>
+<p>fast与slow 相遇的时候, slow 走过的节点数为 <span class="arithmatex">\(x+y\)</span> , fast走过的节点数为 <span class="arithmatex">\(x + n(y + z) + y\)</span> </p>
+<blockquote>
+<p>slow 必定是在进入环中 第一圈的时候被fast遇到
+fast 必定是在环中走了至少一圈，然后遇到了slow， <strong><span class="arithmatex">\(n\)</span> 表示fast在环中走的圈数</strong></p>
+</blockquote>
+<p>因为fast每一步走两个节点, slow每一步走一个节点，所以相遇的时候 根据走过的路径距离形成一个等式：
+$$
+2(x + y) = x + n(y + z) + y
+$$
+左右两边同时消去 <span class="arithmatex">\(x + y\)</span>, 并且把 <span class="arithmatex">\(x\)</span> 单独放在左边：
+$$
+x = n(y + z) - y 
+$$</p>
+<p>此时看不出什么等量关系，从 <span class="arithmatex">\(n(y+z)\)</span> 中提取出来一个 <span class="arithmatex">\(y + z\)</span>
+$$
+x = (n-1)(y+z) + z
+$$</p>
+<p>其中 <span class="arithmatex">\(y+z\)</span> 是环形中的节点数目，如果 <span class="arithmatex">\(n=1\)</span>, 即fast 在环形中走一圈后, 与 slow 相遇, 那么 <span class="arithmatex">\(x = z\)</span></p>
+<p>即：<strong>从头结点出发一个指针，从相遇节点 也出发一个指针，这两个指针每次只走一个节点， 那么当这两个指针相遇的时候就是 环形入口的节点</strong>。（另一个等量关系）</p>
+<p>当然，也有可以 fast 在环形中走了 若干圈(即 n!=1), 与 slow 相遇,  但是即使是这样, 从 头节点出发一个指针index1，从相遇节点也出发一个指针index2，这两个指针每次只走一个节点，即使 index2 在环中走了若干圈，但是最后仍然会和 index1 相遇</p>
+<p><img alt="" src="https://code-thinking.cdn.bcebos.com/gifs/142.%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II%EF%BC%88%E6%B1%82%E5%85%A5%E5%8F%A3%EF%BC%89.gif" /></p>
+<div class="highlight"><pre><span></span><code>index1 = head;
+while (index1 != index2){
+    index1 = index1.next
+    index2 = index2.next
+    size++;
+}
+
+// 循环必定会打破, 打破循环的时候 index1=index2 就是环的入口
+</code></pre></div>
+<p><strong>代码实现：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+
+<span class="cm"> * Definition for singly-linked list.</span>
+
+<span class="cm"> * class ListNode {</span>
+
+<span class="cm"> *     int val;</span>
+
+<span class="cm"> *     ListNode next;</span>
+
+<span class="cm"> *     ListNode(int x) {</span>
+
+<span class="cm"> *         val = x;</span>
+
+<span class="cm"> *         next = null;</span>
+
+<span class="cm"> *     }</span>
+
+<span class="cm"> * }</span>
+
+<span class="cm"> */</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ListNode</span><span class="w"> </span><span class="nf">detectCycle</span><span class="p">(</span><span class="n">ListNode</span><span class="w"> </span><span class="n">head</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// 1. 使用快慢指针找到相遇的地方</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">fast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">ListNode</span><span class="w"> </span><span class="n">slow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">fast</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span>
+
+<span class="w">            </span><span class="n">fast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">slow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">slow</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fast</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">slow</span><span class="p">){</span>
+
+<span class="w">                </span><span class="c1">// 2. 寻找环的入口</span>
+
+<span class="w">                </span><span class="n">ListNode</span><span class="w"> </span><span class="n">index1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
+
+<span class="w">                </span><span class="n">ListNode</span><span class="w"> </span><span class="n">index2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">slow</span><span class="p">;</span>
+
+
+
+<span class="w">                </span><span class="k">while</span><span class="p">(</span><span class="n">index1</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">index2</span><span class="p">){</span>
+
+<span class="w">                    </span><span class="n">index1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">index1</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">                    </span><span class="n">index2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">index2</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">index1</span><span class="p">;</span>
+
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+
+
+
+
+
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+    <!-- Last update of source file -->
+    
+
+    
+
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../1.%E6%95%B0%E7%BB%84/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 数组">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                数组
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../3.%E5%93%88%E5%B8%8C%E8%A1%A8/" class="md-footer__link md-footer__link--next" aria-label="下一页: 哈希表">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                哈希表
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/cloudinwind" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<cloudinwind@out.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://space.bilibili.com" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
