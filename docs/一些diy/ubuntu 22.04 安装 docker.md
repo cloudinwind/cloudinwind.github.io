@@ -3,6 +3,14 @@ title: ubuntu 22.04 安装 docker
 tags:
   - 服务器
   - 环境部署
+slug: ubuntu-22.04-an-zhuang-docker
+cover: ""
+categories:
+  - 工作
+halo:
+  site: http://162.14.74.139:8080
+  name: 573c892f-7886-40ce-9b19-7470f5af9184
+  publish: false
 ---
 
 ## 参考

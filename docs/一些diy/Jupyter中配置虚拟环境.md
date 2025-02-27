@@ -1,15 +1,15 @@
 ---
 title: Jupyter中配置虚拟环境
 slug: jupyterzhong-pei-zhi-xu-ni-huan-jing
-cover: 
+cover: ""
 categories:
-  - 环境部署
+  - 工作
 tags:
   - 服务器
   - 环境部署
 halo:
-  site: http://119.3.239.131:8080
-  name: ae989a0e-57f0-4de9-8de2-d5bb65e2c377
+  site: http://162.14.74.139:8080
+  name: 8eab8092-8997-4517-af05-d719f668a555
   publish: false
 ---
   

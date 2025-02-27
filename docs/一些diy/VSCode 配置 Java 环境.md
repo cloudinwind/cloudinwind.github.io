@@ -3,16 +3,16 @@ title: VSCode 配置 Java 环境
 slug: "1718178585772"
 cover: https://pic2.58cdn.com.cn/nowater/webim/big/n_v25dc670d9db3843eba3198a9a75280901.png
 categories:
-  - 环境部署
+  - 工作
 tags:
   - 服务器
   - 环境部署
-halo:
-  site: http://119.3.239.131:8080
-  name: b3b22d66-5ebd-4b4d-8f75-11d73d56eade
-  publish: true
 NotionID-cloudinwind: 88e5f195-11d7-42a4-b14f-d0a6d835cb01
 link-cloudinwind: https://cloudinwind.notion.site/VSCode-Java-88e5f19511d742a4b14fd0a6d835cb01
+halo:
+  site: http://162.14.74.139:8080
+  name: ce6deda4-b2c7-43f7-b6aa-2743db84746c
+  publish: false
 ---
 # VSCode 配置 Java 环境
 

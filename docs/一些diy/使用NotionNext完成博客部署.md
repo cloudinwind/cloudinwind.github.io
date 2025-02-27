@@ -3,15 +3,14 @@ title: 使用NotionNext完成博客部署
 cover: https://raw.githubusercontent.com/cloudinwind/images/main/markdown_images/202407241312107.png
 summary: NotionNext 相关配置
 categories:
-  - 工具
-  - 环境部署
+  - 工作
 tags:
   - 工具
+slug: shi-yong-notionnextwan-cheng-bo-ke-bu-shu
 halo:
-  site: http://119.3.239.131:8080
-  name: 14fdde81-00d3-4ff9-a551-0d429eab765e
-  publish: true
-slug: test
+  site: http://162.14.74.139:8080
+  name: 0e92731d-17c7-4ce3-9c79-2f1495c19616
+  publish: false
 ---
 
 

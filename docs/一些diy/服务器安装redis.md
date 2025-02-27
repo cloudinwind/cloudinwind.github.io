@@ -3,16 +3,16 @@ title: 服务器安装redis
 slug: fu-wu-qi-an-zhuang-redis
 cover: https://pic.imgdb.cn/item/66cd7246d9c307b7e9c3f356.png
 categories:
-  - 环境部署
+  - 工作
 tags:
   - 服务器
   - 环境部署
-halo:
-  site: http://119.3.239.131:8080
-  name: d87a882f-9995-4976-9a14-5386d5bdda2e
-  publish: true
 NotionID-cloudinwind: 17001505-cfbe-81fe-b1e4-e84b7802f1d1
 link-cloudinwind: https://cloudinwind.notion.site/redis-17001505cfbe81feb1e4e84b7802f1d1
+halo:
+  site: http://162.14.74.139:8080
+  name: a41ec311-44d8-4fe7-b940-db35a1a2cf1b
+  publish: false
 ---
 
 ## 安装 redis

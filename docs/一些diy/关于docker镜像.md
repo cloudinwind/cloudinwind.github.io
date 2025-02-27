@@ -2,15 +2,15 @@
 title: 关于docker镜像
 cover: https://pic.imgdb.cn/item/66a08708d9c307b7e9ef76f7.webp
 categories:
-  - 环境部署
+  - 工作
 tags:
   - 服务器
   - 环境部署
 slug: guan-yu-dockerjing-xiang
 halo:
-  site: http://119.3.239.131:8080
-  name: 00fc2532-01d0-47e4-84f3-f6afea4d53aa
-  publish: true
+  site: http://162.14.74.139:8080
+  name: fb6c461b-3005-4fc8-b995-566e51ae32ff
+  publish: false
 ---
 
 ## 真正能用的（重要）
